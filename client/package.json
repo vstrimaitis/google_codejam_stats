@@ -1,0 +1,43 @@
+{
+    "name": "client",
+    "version": "0.1.0",
+    "private": true,
+    "homepage": "https://vstrimaitis.github.io/google_codejam_stats",
+    "dependencies": {
+        "@material-ui/core": "^3.9.3",
+        "@material-ui/icons": "^3.0.2",
+        "@types/axios-case-converter": "^0.3.1",
+        "@types/jest": "24.0.11",
+        "@types/node": "11.13.0",
+        "@types/react": "16.8.12",
+        "@types/react-dom": "16.8.3",
+        "@types/react-router-dom": "^4.3.1",
+        "axios": "^0.18.0",
+        "axios-case-converter": "^0.3.0",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "react-router-dom": "^5.0.0",
+        "react-scripts": "2.1.8",
+        "typescript": "3.4.2"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": [
+        ">0.2%",
+        "not dead",
+        "not ie <= 11",
+        "not op_mini all"
+    ],
+    "devDependencies": {
+        "gh-pages": "^2.0.1"
+    }
+}

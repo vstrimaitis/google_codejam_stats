@@ -1,0 +1,120 @@
+{
+    "challenge": {
+        "additional_info": "Contestants with at least 30 points at the end of this round will advance to Round 1.",
+        "are_results_final": true,
+        "end_ms": 1554602400000,
+        "id": "0000000000051705",
+        "is_practice_available": true,
+        "result_status": 20,
+        "result_status__str": "FULLY_VISIBLE",
+        "show_scoreboard": true,
+        "start_ms": 1554505200000,
+        "tasks": [
+            {
+                "id": "00000000000881da",
+                "num_attempted": 29801,
+                "tests": [
+                    {
+                        "type": 1,
+                        "type__str": "VISIBLE",
+                        "value": 0
+                    },
+                    {
+                        "num_solved": 28236,
+                        "type": 1,
+                        "type__str": "VISIBLE",
+                        "value": 5
+                    },
+                    {
+                        "num_solved": 27724,
+                        "type": 1,
+                        "type__str": "VISIBLE",
+                        "value": 9
+                    },
+                    {
+                        "num_solved": 23877,
+                        "type": 2,
+                        "type__str": "HIDDEN",
+                        "value": 10
+                    }
+                ],
+                "title": "You Can Go Your Own Way"
+            },
+            {
+                "id": "00000000000881de",
+                "num_attempted": 3577,
+                "tests": [
+                    {
+                        "num_solved": 2455,
+                        "type": 1,
+                        "type__str": "VISIBLE",
+                        "value": 14
+                    },
+                    {
+                        "num_solved": 1910,
+                        "type": 2,
+                        "type__str": "HIDDEN",
+                        "value": 20
+                    }
+                ],
+                "title": "Dat Bae"
+            },
+            {
+                "id": "0000000000088231",
+                "num_attempted": 35022,
+                "tests": [
+                    {
+                        "type": 1,
+                        "type__str": "VISIBLE",
+                        "value": 0
+                    },
+                    {
+                        "num_solved": 31456,
+                        "type": 1,
+                        "type__str": "VISIBLE",
+                        "value": 6
+                    },
+                    {
+                        "num_solved": 30007,
+                        "type": 1,
+                        "type__str": "VISIBLE",
+                        "value": 10
+                    },
+                    {
+                        "num_solved": 21679,
+                        "type": 2,
+                        "type__str": "HIDDEN",
+                        "value": 1
+                    }
+                ],
+                "title": "Foregone Solution"
+            },
+            {
+                "id": "000000000008830b",
+                "num_attempted": 16326,
+                "tests": [
+                    {
+                        "type": 1,
+                        "type__str": "VISIBLE",
+                        "value": 0
+                    },
+                    {
+                        "num_solved": 6912,
+                        "type": 1,
+                        "type__str": "VISIBLE",
+                        "value": 10
+                    },
+                    {
+                        "num_solved": 3207,
+                        "type": 2,
+                        "type__str": "HIDDEN",
+                        "value": 15
+                    }
+                ],
+                "title": "Cryptopangrams"
+            }
+        ],
+        "title": "Qualification Round 2019"
+    },
+    "full_scoreboard_size": 35509
+}
