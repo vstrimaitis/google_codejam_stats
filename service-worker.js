@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/vstrimaitis/google_codejam_stats/precache-manifest.1e6e432a847b255c5b6272628e0f9e46.js"
+  "/google_codejam_stats/precache-manifest.cd502d460c941f5612fd3dbc5b2e6830.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/vstrimaitis/google_codejam_stats/index.html", {
+workbox.routing.registerNavigationRoute("/google_codejam_stats/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
