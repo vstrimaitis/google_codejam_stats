@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { RouteProps, RouteComponentProps } from "react-router";
-import { RoundInfo } from "../../model/RoundInfo";
-import { RoundResult } from "../../model/RoundResult";
-import { fetchRoundInfo, fetchRoundResults } from "../../utils/api";
+import { RoundInfo } from "../model/RoundInfo";
+import { RoundResult } from "../model/RoundResult";
+import { fetchRoundInfo, fetchRoundResults } from "../utils/api";
 
 export interface RoundViewState {
     roundInfo?: RoundInfo;

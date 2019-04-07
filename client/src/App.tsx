@@ -2,19 +2,32 @@ import React, { Component } from "react";
 import { Round } from "./model/Round";
 import { fetchConfig } from "./utils/api";
 import { Switch, Route } from "react-router";
-import { MainView } from "./components/views/MainView";
+import { MainView } from "./views/MainView";
 import { HashRouter } from "react-router-dom";
-import { RoundView } from "./components/views/RoundView";
+import { RoundView } from "./views/RoundView";
+import { createMuiTheme, MuiThemeProvider, CssBaseline } from "@material-ui/core";
+import { pink, indigo } from "@material-ui/core/colors";
+
+const theme = createMuiTheme({
+    palette: {
+        primary: indigo,
+        secondary: pink,
+        type: "light"
+    },
+    typography: {
+        useNextVariants: true
+    }
+});
 
 class App extends Component {
     render() {
         return (
-            <HashRouter>
-                <Switch>
-                    <Route exact path="/" component={MainView} />
-                    <Route path="/round/:id" component={RoundView} />
-                </Switch>
-            </HashRouter>
+            <MuiThemeProvider theme={theme}>
+                <React.Fragment>
+                    <CssBaseline />
+                    <MainView />
+                </React.Fragment>
+            </MuiThemeProvider>
         )
     }
 }
