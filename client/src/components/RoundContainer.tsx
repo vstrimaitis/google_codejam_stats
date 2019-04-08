@@ -51,7 +51,7 @@ export class RoundContainer extends Component<RoundContainerProps, RoundContaine
                 <Typography paragraph>
                     {roundInfo.fullScoreboardSize} people participated in this round. Here are the results of Lithuanian participants:
                 </Typography>
-                <Paper>
+                <Paper className={this.props.classes.tableRoot}>
                     <Table>
                         <TableHead>
                             <TableRow>

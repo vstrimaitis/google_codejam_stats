@@ -3,7 +3,7 @@ import { createStyles, Theme } from "@material-ui/core";
 const drawerWidth = 240;
 export const styles = (theme: Theme) => createStyles({
     root: {
-        display: "flex",
+        display: "flex"
     },
     appBar: {
         zIndex: theme.zIndex.drawer + 1,
@@ -21,7 +21,8 @@ export const styles = (theme: Theme) => createStyles({
         flexGrow: 1,
         padding: theme.spacing.unit * 3,
         display: "flex",
-        flexDirection: "column"
+        flexDirection: "column",
+        overflowX: "auto"
     },
     toolbar: theme.mixins.toolbar,
     progress: {
@@ -33,5 +34,8 @@ export const styles = (theme: Theme) => createStyles({
         [theme.breakpoints.up("sm")]: {
         display: "none",
         },
+    },
+    tableRoot: {
+        overflowX: "auto"
     }
 });
