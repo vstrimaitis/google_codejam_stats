@@ -1,6 +1,46 @@
 {
     "rounds": [
         {
+            "id": "0000000000000130",
+            "year": 2018,
+            "displayName": "Practice Session"
+        },
+        {
+            "id": "00000000000000cb",
+            "year": 2018,
+            "displayName": "Qualification Round"
+        },
+        {
+            "id": "0000000000007883",
+            "year": 2018,
+            "displayName": "Round 1A"
+        },
+        {
+            "id": "0000000000007764",
+            "year": 2018,
+            "displayName": "Round 1B"
+        },
+        {
+            "id": "0000000000007765",
+            "year": 2018,
+            "displayName": "Round 1C"
+        },
+        {
+            "id": "0000000000007706",
+            "year": 2018,
+            "displayName": "Round 2"
+        },
+        {
+            "id": "0000000000007707",
+            "year": 2018,
+            "displayName": "Round 3"
+        },
+        {
+            "id": "0000000000007766",
+            "year": 2018,
+            "displayName": "World Finals"
+        },
+        {
             "id": "0000000000051705",
             "year": 2019,
             "displayName": "Qualification Round"
