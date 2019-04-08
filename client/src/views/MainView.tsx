@@ -1,12 +1,10 @@
+import { withStyles, WithStyles } from "@material-ui/core";
 import React, { Component } from "react";
+import { RoundContainer } from "../components/RoundContainer";
+import { Sidebar } from "../components/Sidebar";
 import { Round } from "../model/Round";
 import { fetchConfig } from "../utils/api";
-import { Link } from "react-router-dom";
-import { List, ListItem, ListItemText, AppBar, Toolbar, Typography, Drawer, createStyles, Theme, withStyles, StyledComponentProps, CircularProgress, WithStyles } from "@material-ui/core";
-import { Sidebar } from "../components/Sidebar";
 import { styles } from "./MainStyles";
-import { Header } from "../components/Header";
-import { RoundContainer } from "../components/RoundContainer";
 
 interface MainViewState {
     rounds: Round[];
@@ -36,7 +34,6 @@ export const MainView = withStyles(styles)(class extends Component<MainViewProps
         const classes = this.props.classes;
         return (
             <div className={classes.root}>
-                <Header {...this.props} />
                 <Sidebar
                     {...this.props}
                     isLoading={isLoading}

@@ -1,10 +1,10 @@
-import React, {Component} from "react";
-import { WithStyles, CircularProgress, Typography, LinearProgress, Paper, Table, TableHead, TableRow, TableCell, TableBody } from "@material-ui/core";
-import { styles } from "../views/MainStyles";
+import { CircularProgress, Paper, Table, TableBody, TableCell, TableHead, TableRow, Typography, WithStyles } from "@material-ui/core";
+import React, { Component } from "react";
 import { Round } from "../model/Round";
 import { RoundInfo } from "../model/RoundInfo";
 import { RoundResult } from "../model/RoundResult";
 import { fetchRoundInfo, fetchRoundResults } from "../utils/api";
+import { styles } from "../views/MainStyles";
 
 interface RoundContainerProps extends WithStyles<typeof styles> {
     round?: Round;
