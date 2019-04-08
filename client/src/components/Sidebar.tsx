@@ -19,7 +19,7 @@ export const Sidebar = withStyles(styles, {withTheme: true})(class extends Compo
         isDrawerOpen: false
     }
 
-    renderDrawer() {
+    renderDrawer(toggleDrawer: boolean) {
         const {classes, isLoading, rounds, onRoundClicked} = this.props;
         return (
             isLoading
@@ -30,7 +30,10 @@ export const Sidebar = withStyles(styles, {withTheme: true})(class extends Compo
                     <ListItem key={round.id} button>
                         <ListItemText
                             primary={`${round.displayName} ${round.year}`}
-                            onClick={() => onRoundClicked(round)}
+                            onClick={() => {
+                                if(toggleDrawer) this.handleDrawerToggle();
+                                onRoundClicked(round);
+                            }}
                         />
                     </ListItem>
                 )}
@@ -59,7 +62,7 @@ export const Sidebar = withStyles(styles, {withTheme: true})(class extends Compo
                                 paper: classes.drawerPaper
                             }}
                         >
-                            {this.renderDrawer()}
+                            {this.renderDrawer(true)}
                         </Drawer>
                     </Hidden>
                     <Hidden xsDown implementation="css"> 
@@ -72,7 +75,7 @@ export const Sidebar = withStyles(styles, {withTheme: true})(class extends Compo
                             open
                         >
                             <div className={classes.toolbar}/>
-                            {this.renderDrawer()}
+                            {this.renderDrawer(false)}
                         </Drawer>
                     </Hidden>
                 </nav>
