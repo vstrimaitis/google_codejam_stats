@@ -1,16 +1,18 @@
-import { Theme, createStyles } from "@material-ui/core";
+import { createStyles, Theme } from "@material-ui/core";
 
 const drawerWidth = 240;
 export const styles = (theme: Theme) => createStyles({
     root: {
-        display: "flex",
+        display: "flex"
     },
     appBar: {
         zIndex: theme.zIndex.drawer + 1,
     },
     drawer: {
-        width: drawerWidth,
-        flexShrink: 0,
+        [theme.breakpoints.up("sm")]: {
+            width: drawerWidth,
+            flexShrink: 0,
+        }
     },
     drawerPaper: {
         width: drawerWidth,
@@ -18,10 +20,22 @@ export const styles = (theme: Theme) => createStyles({
     content: {
         flexGrow: 1,
         padding: theme.spacing.unit * 3,
+        display: "flex",
+        flexDirection: "column",
+        overflowX: "auto"
     },
     toolbar: theme.mixins.toolbar,
     progress: {
         margin: theme.spacing.unit*2,
         alignSelf: "center"
+    },
+    menuButton: {
+        marginRight: 20,
+        [theme.breakpoints.up("sm")]: {
+        display: "none",
+        },
+    },
+    tableRoot: {
+        overflowX: "auto"
     }
 });

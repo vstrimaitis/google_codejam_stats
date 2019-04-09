@@ -1,10 +1,10 @@
-import React, {Component} from "react";
-import { WithStyles, CircularProgress, Typography, LinearProgress, Paper, Table, TableHead, TableRow, TableCell, TableBody } from "@material-ui/core";
-import { styles } from "../views/MainStyles";
+import { CircularProgress, Paper, Table, TableBody, TableCell, TableHead, TableRow, Typography, WithStyles } from "@material-ui/core";
+import React, { Component } from "react";
 import { Round } from "../model/Round";
 import { RoundInfo } from "../model/RoundInfo";
 import { RoundResult } from "../model/RoundResult";
 import { fetchRoundInfo, fetchRoundResults } from "../utils/api";
+import { styles } from "../views/MainStyles";
 
 interface RoundContainerProps extends WithStyles<typeof styles> {
     round?: Round;
@@ -51,7 +51,7 @@ export class RoundContainer extends Component<RoundContainerProps, RoundContaine
                 <Typography paragraph>
                     {roundInfo.fullScoreboardSize} people participated in this round. Here are the results of Lithuanian participants:
                 </Typography>
-                <Paper>
+                <Paper className={this.props.classes.tableRoot}>
                     <Table>
                         <TableHead>
                             <TableRow>

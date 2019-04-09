@@ -1,9 +1,10 @@
-import os
+import argparse
 import base64
 import json
-import requests
+import os
 import re
-import argparse
+
+import requests
 
 URL = lambda contest_id, query: f"https://codejam.googleapis.com/scoreboard/{contest_id}/poll?p={query}"
 OUTPUT_ROOT = "./client/public/round_data/"
