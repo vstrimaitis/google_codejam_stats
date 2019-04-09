@@ -4,15 +4,15 @@ self.__precacheManifest = [
     "url": "/google_codejam_stats/static/js/runtime~main.bb2a5726.js"
   },
   {
-    "revision": "c1a5aaacf27b30533916",
-    "url": "/google_codejam_stats/static/js/main.eb5697a5.chunk.js"
+    "revision": "c42578d8403da2bf197b",
+    "url": "/google_codejam_stats/static/js/main.c56f726c.chunk.js"
   },
   {
     "revision": "aa36241f6f0ffa8ae74b",
     "url": "/google_codejam_stats/static/js/2.fa7ed19f.chunk.js"
   },
   {
-    "revision": "77103975a6fb7309f34bf90bc0092425",
+    "revision": "7fc30d043c327fc1573e60025d476b0e",
     "url": "/google_codejam_stats/index.html"
   }
 ];
