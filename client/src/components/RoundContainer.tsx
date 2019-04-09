@@ -60,49 +60,49 @@ export const RoundContainer = withStyles(mainStyles, {withTheme: true})(
             console.log(groupsByScore);
             return (
                 <Grid container spacing={16}>
-                    <Grid item xs={3}>
+                    <Grid item xs={12} sm={6} md={4}>
                         <NumberStatistic
                             number={roundInfo.fullScoreboardSize}
                             label="participants worldwide"
                         />
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={12} sm={6} md={4}>
                         <NumberStatistic
                             number={getParticipantsWithScore(results, maxScore).length}
                             label="perfect scores"
                         />
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={12} sm={6} md={4}>
                         <NumberStatistic
                             number={getTotalSubmissions(results)}
                             label="submissions in total"
                         />
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={12} sm={6} md={4}>
                         <NumberStatistic
                             number={getParticipantsWithAtLeastOneSolved(results).length}
                             label="people solved at least one test set"
                         />
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={12} md={6}>
                         <GroupedBarChart
                             data={groupsByParticipants}
                             title={`Number of participants per country (top ${groupsByParticipants.size})`}
                         />
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={12} md={6}>
                         <GroupedBarChart
                             data={groupsByAverageScore}
                             title={`Top ${groupsByAverageScore.size} countries by average score`}
                         />
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={12} md={6}>
                         <GroupedBarChart
                             data={groupsByTopScorers}
                             title={`Top ${groupsByTopScorers.size} countries with the most top-scorers`}
                         />
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={12} md={6}>
                         <Line
                             data={{
                                 labels: Array.from(groupsByScore.keys()),
