@@ -1,13 +1,13 @@
 import { AppBar, IconButton, Toolbar, Typography, WithStyles, withStyles } from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
 import React from "react";
-import { styles } from "../views/MainStyles";
+import { mainStyles } from "../styles/main";
 
-interface HeaderProps extends WithStyles<typeof styles> {
+interface HeaderProps extends WithStyles<typeof mainStyles> {
     onDrawerToggle: () => void;
 }
 
-export const Header = withStyles(styles)(({classes, onDrawerToggle}: HeaderProps) => (
+export const Header = withStyles(mainStyles)(({classes, onDrawerToggle}: HeaderProps) => (
     <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
             <IconButton

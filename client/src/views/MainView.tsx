@@ -4,7 +4,7 @@ import { RoundContainer } from "../components/RoundContainer";
 import { Sidebar } from "../components/Sidebar";
 import { Round } from "../model/Round";
 import { fetchConfig } from "../utils/api";
-import { styles } from "./MainStyles";
+import { mainStyles } from "../styles/main";
 
 interface MainViewState {
     rounds: Round[];
@@ -12,9 +12,9 @@ interface MainViewState {
     selectedRound?: Round;
 }
 
-interface MainViewProps extends WithStyles<typeof styles> {}
+interface MainViewProps extends WithStyles<typeof mainStyles> {}
 
-export const MainView = withStyles(styles)(class extends Component<MainViewProps, MainViewState> {
+export const MainView = withStyles(mainStyles)(class extends Component<MainViewProps, MainViewState> {
     state: MainViewState = {
         rounds: [],
         isLoading: true

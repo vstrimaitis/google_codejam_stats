@@ -1,10 +1,10 @@
 import { CircularProgress, Drawer, Hidden, List, ListItem, ListItemText, WithStyles, withStyles, WithTheme } from "@material-ui/core";
 import React, { Component } from "react";
 import { Round } from "../model/Round";
-import { styles } from "../views/MainStyles";
+import { mainStyles } from "../styles/main";
 import { Header } from "./Header";
 
-interface SidebarProps extends WithStyles<typeof styles>, WithTheme {
+interface SidebarProps extends WithStyles<typeof mainStyles>, WithTheme {
     isLoading: boolean;
     rounds: Round[];
     onRoundClicked: (round: Round) => void;
@@ -14,7 +14,7 @@ interface SidebarState {
     isDrawerOpen: boolean;
 }
 
-export const Sidebar = withStyles(styles, {withTheme: true})(class extends Component<SidebarProps, SidebarState> {
+export const Sidebar = withStyles(mainStyles, {withTheme: true})(class extends Component<SidebarProps, SidebarState> {
     state: SidebarState = {
         isDrawerOpen: false
     }
