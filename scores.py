@@ -6,6 +6,8 @@ import re
 
 import requests
 
+from convert import json_to_camel_case
+
 URL = lambda contest_id, query: f"https://codejam.googleapis.com/scoreboard/{contest_id}/poll?p={query}"
 OUTPUT_ROOT = "./client/public/round_data"
 SCORES_ROOT = os.path.join(OUTPUT_ROOT, "scores")
@@ -44,10 +46,11 @@ def get_results_by_page(round_id, page_num, page_size):
     if resp.status_code != 200:
         raise Exception(resp.text)
     j = from_base64(resp.text)
-    return json.loads(j)
+    j = json.loads(j)
+    return json_to_camel_case(j)
 
 def get_scores_by_page(round_id, page_num, page_size):
-    return get_results_by_page(round_id, page_num, page_size)["user_scores"]
+    return get_results_by_page(round_id, page_num, page_size)["userScores"]
 
 def save_progress(out_file, data):
     print(f"Saving data to {out_file}")
@@ -67,13 +70,13 @@ def download_info(round_id):
         return
     ensure_dir_exists(info_file)
     results = get_results_by_page(round_id, 0, 0)
-    del results["user_scores"]
+    del results["userScores"]
     save_progress(info_file, results)
 
 def get_scoreboard_size(round_id):
     with open(get_info_file_path(round_id), "r") as f:
         res = json.load(f)
-        return res["full_scoreboard_size"]
+        return res["fullScoreboardSize"]
 
 def download_scores(round_id):
     curr_page = 0
@@ -113,11 +116,12 @@ def print_stats(round_id, country):
         print(f"{'Rank'.center(RANK_W)}|{'Username'.center(USERNAME_W)}|{'Score'.center(SCORE_W)}")
         print(f"{'-'*RANK_W}|{'-'*USERNAME_W}|{'-'*SCORE_W}")
         for r in results:
-            print(f"{str(r['rank']).center(RANK_W)}|{str(r['displayname']).center(USERNAME_W)}|{str(r['score_1']).center(SCORE_W)}")
+            print(f"{str(r['rank']).center(RANK_W)}|{str(r['displayname']).center(USERNAME_W)}|{str(r['score1']).center(SCORE_W)}")
 
 if __name__ == "__main__":
     # download_scores()
     # print_stats("Lithuania")
+
     parser = argparse.ArgumentParser(description="Download results for a Google Code Jam round")
     parser.add_argument("round_id", help="The ID of the round (can be found at the end of the round URL)")
     args = parser.parse_args()

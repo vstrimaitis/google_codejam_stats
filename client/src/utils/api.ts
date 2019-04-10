@@ -1,10 +1,7 @@
-import axios, { AxiosResponse, AxiosInstance } from "axios";
+import axios, { AxiosResponse } from "axios";
 import { Config } from "../model/Config";
 import { RoundInfo } from "../model/RoundInfo";
-import applyConverters from "axios-case-converter";
 import { RoundResult } from "../model/RoundResult";
-
-const client = applyConverters(axios.create() as any) as AxiosInstance;
 
 const handleErrors = <T>(r: AxiosResponse<T>) => {
     if (r.status < 200 || r.status >= 300) throw new Error(r.status + ": " + r.statusText);
@@ -12,16 +9,16 @@ const handleErrors = <T>(r: AxiosResponse<T>) => {
 };
 
 export const fetchConfig = () =>
-    client
+    axios
         .get<Config>("config.json")
         .then(handleErrors)
 
 export const fetchRoundInfo = (roundId: string) =>
-    client
+    axios
         .get<RoundInfo>(`round_data/info/${roundId}.json`)
         .then(handleErrors);
 
 export const fetchRoundResults = (roundId: string) =>
-    client
+    axios
         .get<RoundResult[]>(`round_data/scores/${roundId}.json`)
         .then(handleErrors);
