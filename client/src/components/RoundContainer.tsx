@@ -1,6 +1,6 @@
 import { CircularProgress, Grid, Paper, Table, TableBody, TableCell, TableHead, TableRow, Typography, WithStyles, withStyles, WithTheme } from "@material-ui/core";
 import React, { Component } from "react";
-import { Line } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 import { Round } from "../model/Round";
 import { RoundInfo } from "../model/RoundInfo";
 import { RoundResult } from "../model/RoundResult";
@@ -103,7 +103,7 @@ export const RoundContainer = withStyles(mainStyles, {withTheme: true})(
                         />
                     </Grid>
                     <Grid item xs={12} md={6}>
-                        <Line
+                        {/* <Line
                             data={{
                                 labels: Array.from(groupsByScore.keys()),
                                 datasets: [
@@ -127,6 +127,40 @@ export const RoundContainer = withStyles(mainStyles, {withTheme: true})(
                                     pointRadius: 1,
                                     pointHitRadius: 10,
                                     data: Array.from(groupsByScore.values())
+                                    }
+                                ]
+                            }}
+                        /> */}
+                        <Bar
+                            options={{
+                                scales: {
+                                    xAxes: [{
+                                        ticks: {
+                                            beginAtZero: true
+                                        },
+                                        barPercentage: 1.0,
+                                        categoryPercentage: 1.0
+                                    }]
+                                },
+                                title: { 
+                                    display: true,
+                                    text: "Point distribution"
+                                },
+                                legend: {
+                                    display: false
+                                }
+                            }}
+                            data={{
+                                labels: Array.from(groupsByScore.keys()),
+                                datasets:[
+                                    {
+                                        labels: "Participant count",
+                                        backgroundColor: this.props.theme.palette.primary.light,
+                                        // borderColor: this.props.theme.palette.primary.dark,
+                                        // borderWidth: 0,
+                                        hoverBackgroundColor: this.props.theme.palette.secondary.light,
+                                        // hoverBorderColor: this.props.theme.palette.secondary.dark,
+                                        data: Array.from(groupsByScore.values())
                                     }
                                 ]
                             }}

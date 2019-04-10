@@ -1,7 +1,7 @@
+import { WithStyles, withStyles, WithTheme } from "@material-ui/core";
 import React from "react";
-import { WithTheme, WithStyles, withStyles } from "@material-ui/core";
-import { mainStyles } from "../../styles/main";
 import { HorizontalBar } from "react-chartjs-2";
+import { mainStyles } from "../../styles/main";
 
 interface GroupedBarChartProps extends WithStyles<typeof mainStyles>, WithTheme {
     data: Map<string, number>;
@@ -17,13 +17,19 @@ export const GroupedBarChart = withStyles(mainStyles, {withTheme: true})(({data,
                         beginAtZero: true
                     }
                 }]
+            },
+            title: { 
+                display: true,
+                text: title
+            },
+            legend: {
+                display: false
             }
         }}
         data={{
             labels: Array.from(data.keys()),
             datasets:[
                 {
-                    label: title,
                     backgroundColor: theme.palette.primary.light,
                     borderColor: theme.palette.primary.dark,
                     borderWidth: 1,
