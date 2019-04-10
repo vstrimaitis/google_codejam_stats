@@ -52,7 +52,7 @@ export const RoundContainer = withStyles(mainStyles, {withTheme: true})(
 
         renderStats(roundInfo: RoundInfo, results: RoundResult[]) {
             const maxScore = getMaxScore(roundInfo);
-            const maxEntries = 20;
+            const maxEntries = 10;
             const groupsByParticipants = getNumberOfParticipantsByCountry(results, maxEntries);
             const groupsByAverageScore = getAverageScoreByCountry(results, maxEntries);
             const groupsByTopScorers = getNumberOfParticipantsWithScoreByCountry(results, maxScore, maxEntries);
@@ -103,34 +103,6 @@ export const RoundContainer = withStyles(mainStyles, {withTheme: true})(
                         />
                     </Grid>
                     <Grid item xs={12} md={6}>
-                        {/* <Line
-                            data={{
-                                labels: Array.from(groupsByScore.keys()),
-                                datasets: [
-                                    {
-                                    label: 'Point distribution',
-                                    fill: false,
-                                    lineTension: 0.1,
-                                    backgroundColor: this.props.theme.palette.primary.light,
-                                    borderColor: this.props.theme.palette.primary.dark,
-                                    borderCapStyle: 'butt',
-                                    borderDash: [],
-                                    borderDashOffset: 0.0,
-                                    borderJoinStyle: 'miter',
-                                    pointBorderColor: this.props.theme.palette.primary.dark,
-                                    pointBackgroundColor: '#fff',
-                                    pointBorderWidth: 1,
-                                    pointHoverRadius: 5,
-                                    pointHoverBackgroundColor: this.props.theme.palette.secondary.light,
-                                    pointHoverBorderColor: this.props.theme.palette.secondary.dark,
-                                    pointHoverBorderWidth: 2,
-                                    pointRadius: 1,
-                                    pointHitRadius: 10,
-                                    data: Array.from(groupsByScore.values())
-                                    }
-                                ]
-                            }}
-                        /> */}
                         <Bar
                             options={{
                                 scales: {
@@ -156,10 +128,7 @@ export const RoundContainer = withStyles(mainStyles, {withTheme: true})(
                                     {
                                         labels: "Participant count",
                                         backgroundColor: this.props.theme.palette.primary.light,
-                                        // borderColor: this.props.theme.palette.primary.dark,
-                                        // borderWidth: 0,
                                         hoverBackgroundColor: this.props.theme.palette.secondary.light,
-                                        // hoverBorderColor: this.props.theme.palette.secondary.dark,
                                         data: Array.from(groupsByScore.values())
                                     }
                                 ]
