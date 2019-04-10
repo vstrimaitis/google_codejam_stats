@@ -6,9 +6,10 @@ import { mainStyles } from "../../styles/main";
 interface GroupedBarChartProps extends WithStyles<typeof mainStyles>, WithTheme {
     data: Map<string, number>;
     title: string;
+    label: string;
 }
 
-export const GroupedBarChart = withStyles(mainStyles, {withTheme: true})(({data, title, theme}: GroupedBarChartProps) => (
+export const GroupedBarChart = withStyles(mainStyles, {withTheme: true})(({data, title, label, theme}: GroupedBarChartProps) => (
     <HorizontalBar
         options={{
             scales: {
@@ -30,6 +31,7 @@ export const GroupedBarChart = withStyles(mainStyles, {withTheme: true})(({data,
             labels: Array.from(data.keys()),
             datasets:[
                 {
+                    label,
                     backgroundColor: theme.palette.primary.light,
                     borderColor: theme.palette.primary.dark,
                     borderWidth: 1,

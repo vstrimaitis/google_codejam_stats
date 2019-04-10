@@ -88,18 +88,21 @@ export const RoundContainer = withStyles(mainStyles, {withTheme: true})(
                         <GroupedBarChart
                             data={groupsByParticipants}
                             title={`Number of participants per country (top ${groupsByParticipants.size})`}
+                            label="number of participants"
                         />
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <GroupedBarChart
                             data={groupsByAverageScore}
                             title={`Top ${groupsByAverageScore.size} countries by average score`}
+                            label="average score"
                         />
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <GroupedBarChart
                             data={groupsByTopScorers}
                             title={`Top ${groupsByTopScorers.size} countries with the most top-scorers`}
+                            label="number of top-scorers"
                         />
                     </Grid>
                     <Grid item xs={12} md={6}>
@@ -116,7 +119,7 @@ export const RoundContainer = withStyles(mainStyles, {withTheme: true})(
                                 },
                                 title: { 
                                     display: true,
-                                    text: "Point distribution"
+                                    text: "Score distribution"
                                 },
                                 legend: {
                                     display: false
@@ -126,7 +129,7 @@ export const RoundContainer = withStyles(mainStyles, {withTheme: true})(
                                 labels: Array.from(groupsByScore.keys()),
                                 datasets:[
                                     {
-                                        labels: "Participant count",
+                                        label: "number of participants",
                                         backgroundColor: this.props.theme.palette.primary.light,
                                         hoverBackgroundColor: this.props.theme.palette.secondary.light,
                                         data: Array.from(groupsByScore.values())
