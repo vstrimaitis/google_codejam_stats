@@ -12,7 +12,7 @@ export interface RoundResult {
     country: string;
     displayname: string;
     rank: number;
-    score_1: number;
-    score_2: number;
+    score1: number;
+    score2: number;
     taskInfo: TaskResult[];
 }

@@ -1,14 +1,14 @@
-import { CircularProgress, Paper, Table, TableBody, TableCell, TableHead, TableRow, Typography, WithStyles, Grid, Tabs, Tab, WithTheme, withStyles } from "@material-ui/core";
+import { CircularProgress, Grid, Paper, Table, TableBody, TableCell, TableHead, TableRow, Typography, WithStyles, withStyles, WithTheme } from "@material-ui/core";
 import React, { Component } from "react";
+import { Line } from "react-chartjs-2";
 import { Round } from "../model/Round";
 import { RoundInfo } from "../model/RoundInfo";
 import { RoundResult } from "../model/RoundResult";
-import { fetchRoundInfo, fetchRoundResults } from "../utils/api";
 import { mainStyles } from "../styles/main";
-import { NumberStatistic } from "./widgets/NumberStatistic";
-import { getMaxScore, getTotalSubmissions, getParticipantsWithAtLeastOneSolved, getParticipantsWithScore, getNumberOfParticipantsByCountry, getAverageScoreByCountry, getNumberOfParticipantsWithScoreByCountry, groupByScore } from "../utils/stats";
+import { fetchRoundInfo, fetchRoundResults } from "../utils/api";
+import { getAverageScoreByCountry, getMaxScore, getNumberOfParticipantsByCountry, getNumberOfParticipantsWithScoreByCountry, getParticipantsWithAtLeastOneSolved, getParticipantsWithScore, getTotalSubmissions, groupByScore } from "../utils/stats";
 import { GroupedBarChart } from "./widgets/GroupedBarChart";
-import { Line, Bar } from "react-chartjs-2";
+import { NumberStatistic } from "./widgets/NumberStatistic";
 
 interface RoundContainerProps extends WithStyles<typeof mainStyles>, WithTheme {
     round?: Round;
@@ -60,25 +60,25 @@ export const RoundContainer = withStyles(mainStyles, {withTheme: true})(
             console.log(groupsByScore);
             return (
                 <Grid container spacing={16}>
-                    <Grid item xs={12} sm={6} md={4}>
+                    <Grid item xs={12} sm={6} md={3}>
                         <NumberStatistic
                             number={roundInfo.fullScoreboardSize}
                             label="participants worldwide"
                         />
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
+                    <Grid item xs={12} sm={6} md={3}>
                         <NumberStatistic
                             number={getParticipantsWithScore(results, maxScore).length}
                             label="perfect scores"
                         />
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
+                    <Grid item xs={12} sm={6} md={3}>
                         <NumberStatistic
                             number={getTotalSubmissions(results)}
                             label="submissions in total"
                         />
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
+                    <Grid item xs={12} sm={6} md={3}>
                         <NumberStatistic
                             number={getParticipantsWithAtLeastOneSolved(results).length}
                             label="people solved at least one test set"
@@ -150,7 +150,7 @@ export const RoundContainer = withStyles(mainStyles, {withTheme: true})(
                                             <TableRow key={i}>
                                                 <TableCell>{result.rank}</TableCell>
                                                 <TableCell>{result.displayname}</TableCell>
-                                                <TableCell>{result.score_1}</TableCell>
+                                                <TableCell>{result.score1}</TableCell>
                                             </TableRow>
                                     )}
                                 </TableBody>

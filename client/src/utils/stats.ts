@@ -1,5 +1,5 @@
-import { RoundInfo } from "../model/RoundInfo";
 import "typescript-array-extensions";
+import { RoundInfo } from "../model/RoundInfo";
 import { RoundResult } from "../model/RoundResult";
 
 export const getMaxScore = (roundInfo: RoundInfo) =>
@@ -14,7 +14,7 @@ export const getMaxScore = (roundInfo: RoundInfo) =>
         .sum();
 
 export const getParticipantsWithScore = (results: RoundResult[], score: number) =>
-    results.filter(r => r.score_1 === score);
+    results.filter(r => r.score1 === score);
 
 export const getTotalSubmissions = (results: RoundResult[]) =>
     results.map(result =>
@@ -44,7 +44,7 @@ export const getNumberOfParticipantsByCountry = (results: RoundResult[], maxEntr
 export const getAverageScoreByCountry = (results: RoundResult[], maxEntries?: number) =>
     getStatsByCountry(
         results,
-        r => r.map(result => result.score_1).average(),
+        r => r.map(result => result.score1).average(),
         (a, b) => -a+b,
         maxEntries
     );
@@ -52,14 +52,14 @@ export const getAverageScoreByCountry = (results: RoundResult[], maxEntries?: nu
 export const getNumberOfParticipantsWithScoreByCountry = (results: RoundResult[], score: number, maxEntries?: number) => 
     getStatsByCountry(
         results,
-        r => r.filter(result => result.score_1 === score).length,
+        r => r.filter(result => result.score1 === score).length,
         (a, b) => -a+b,
         maxEntries
     );
 
 export const groupByScore = (results: RoundResult[], minScore: number, maxScore: number) => {
     const groups = new Map(Array.from(
-            results.groupBy((result, index, arr) => result.score_1)
+            results.groupBy((result, index, arr) => result.score1)
         )
         .map(kvp => [kvp[0], kvp[1].length] as [number, number])
         .sort((a, b) => a[0]-b[0])
