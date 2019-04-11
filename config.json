@@ -3,47 +3,81 @@
         {
             "id": "0000000000000130",
             "year": 2018,
-            "displayName": "Practice Session"
+            "displayName": "Practice Session",
+            "qualification": {
+                "type": "NONE"
+            }
         },
         {
             "id": "00000000000000cb",
             "year": 2018,
-            "displayName": "Qualification Round"
+            "displayName": "Qualification Round",
+            "qualification": {
+                "type": "SCORE",
+                "threshold": 25
+            }
         },
         {
             "id": "0000000000007883",
             "year": 2018,
-            "displayName": "Round 1A"
+            "displayName": "Round 1A",
+            "qualification": {
+                "type": "RANK",
+                "threshold": 1500
+            }
         },
         {
             "id": "0000000000007764",
             "year": 2018,
-            "displayName": "Round 1B"
+            "displayName": "Round 1B",
+            "qualification": {
+                "type": "RANK",
+                "threshold": 1500
+            }
         },
         {
             "id": "0000000000007765",
             "year": 2018,
-            "displayName": "Round 1C"
+            "displayName": "Round 1C",
+            "qualification": {
+                "type": "RANK",
+                "threshold": 1500
+            }
         },
         {
             "id": "0000000000007706",
             "year": 2018,
-            "displayName": "Round 2"
+            "displayName": "Round 2",
+            "qualification": {
+                "type": "RANK",
+                "threshold": 1000
+            }
         },
         {
             "id": "0000000000007707",
             "year": 2018,
-            "displayName": "Round 3"
+            "displayName": "Round 3",
+            "qualification": {
+                "type": "RANK",
+                "threshold": 25
+            }
         },
         {
             "id": "0000000000007766",
             "year": 2018,
-            "displayName": "World Finals"
+            "displayName": "World Finals",
+            "qualification": {
+                "type": "NONE"
+            }
         },
         {
             "id": "0000000000051705",
             "year": 2019,
-            "displayName": "Qualification Round"
+            "displayName": "Qualification Round",
+            "qualification": {
+                "type": "SCORE",
+                "threshold": 30
+            }
         }
     ]
 }
