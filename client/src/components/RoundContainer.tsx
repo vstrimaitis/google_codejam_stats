@@ -1,7 +1,8 @@
-import { CircularProgress, Grid, Paper, Table, TableBody, TableCell, TableHead, TableRow, Typography, WithStyles, withStyles, WithTheme } from "@material-ui/core";
+import { CircularProgress, Grid, Icon, Paper, Table, TableBody, TableCell, TableHead, TableRow, Typography, WithStyles, withStyles, WithTheme } from "@material-ui/core";
+import { Check, Clear } from "@material-ui/icons";
 import React, { Component } from "react";
 import { Bar } from "react-chartjs-2";
-import { Round } from "../model/Round";
+import { QualificationType, Round } from "../model/Round";
 import { RoundInfo } from "../model/RoundInfo";
 import { RoundResult } from "../model/RoundResult";
 import { mainStyles } from "../styles/main";
@@ -51,6 +52,7 @@ export const RoundContainer = withStyles(mainStyles, {withTheme: true})(
         }
 
         renderStats(roundInfo: RoundInfo, results: RoundResult[]) {
+            const qualification = this.props.round ? this.props.round.qualification : undefined;
             const maxScore = getMaxScore(roundInfo);
             const maxEntries = 10;
             const groupsByParticipants = getNumberOfParticipantsByCountry(results, maxEntries);
@@ -58,6 +60,7 @@ export const RoundContainer = withStyles(mainStyles, {withTheme: true})(
             const groupsByTopScorers = getNumberOfParticipantsWithScoreByCountry(results, maxScore, maxEntries);
             const groupsByScore = groupByScore(results, 0, maxScore);
             console.log(groupsByScore);
+            console.log(qualification);
             return (
                 <Grid container spacing={16}>
                     <Grid item xs={12} sm={6} md={3}>
@@ -146,6 +149,10 @@ export const RoundContainer = withStyles(mainStyles, {withTheme: true})(
                                         <TableCell>Rank</TableCell>
                                         <TableCell>Username</TableCell>
                                         <TableCell>Score</TableCell>
+                                        { qualification && qualification.type !== QualificationType.NONE
+                                        ? <TableCell>Qualified</TableCell>
+                                        : null
+                                        }
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
@@ -157,6 +164,14 @@ export const RoundContainer = withStyles(mainStyles, {withTheme: true})(
                                                 <TableCell>{result.rank}</TableCell>
                                                 <TableCell>{result.displayname}</TableCell>
                                                 <TableCell>{result.score1}</TableCell>
+                                                { qualification
+                                                ? qualification.type === QualificationType.RANK
+                                                ? <TableCell><Icon>{result.rank <= qualification.threshold ? <Check /> : <Clear/>}</Icon></TableCell>
+                                                : qualification.type === QualificationType.SCORE
+                                                ? <TableCell><Icon>{result.score1 >= qualification.threshold ? <Check/> : <Clear/>}</Icon></TableCell>
+                                                : null
+                                                : null
+                                                }
                                             </TableRow>
                                     )}
                                 </TableBody>
