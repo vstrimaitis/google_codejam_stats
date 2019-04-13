@@ -78,6 +78,15 @@
                 "type": "SCORE",
                 "threshold": 30
             }
+        },
+        {
+            "id": "0000000000051635",
+            "year": 2019,
+            "displayName": "Round 1A",
+            "qualification": {
+                "type": "RANK",
+                "threshold": 1500
+            }
         }
     ]
 }
