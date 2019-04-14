@@ -1,6 +1,7 @@
 import "typescript-array-extensions";
 import { RoundInfo } from "../model/RoundInfo";
 import { RoundResult } from "../model/RoundResult";
+import { RoundQualification, QualificationType } from "../model/Round";
 
 export const getMaxScore = (roundInfo: RoundInfo) =>
     roundInfo
@@ -70,11 +71,11 @@ export const groupByScore = (results: RoundResult[], minScore: number, maxScore:
 }
 
 export const getStatsByCountry = <T>(
-        results: RoundResult[],
-        convert: (result: RoundResult[]) => T,
-        compare: (a: T, b: T) => number,
-        maxEntries?: number) =>
-            new Map(Array.from(
+    results: RoundResult[],
+    convert: (result: RoundResult[]) => T,
+    compare: (a: T, b: T) => number,
+    maxEntries?: number) =>
+        new Map(Array.from(
                 results
                     .groupBy((result, index, arr) => result.country)
                     .entries()
@@ -82,4 +83,12 @@ export const getStatsByCountry = <T>(
             .map(kvp => [kvp[0], convert(kvp[1])] as [string, T])
             .sort((a, b) => compare(a[1], b[1]))
             .slice(0, maxEntries)
-)
+        );
+
+export const isQualificationEnabled = (qualification?: RoundQualification): qualification is RoundQualification =>
+    qualification !== undefined && qualification.type !== QualificationType.NONE;
+
+export const didQualify = (result: RoundResult, qualification: RoundQualification) =>
+    qualification.type === QualificationType.RANK ? result.rank <= qualification.threshold :
+    qualification.type == QualificationType.SCORE ? result.score1 >= qualification.threshold :
+    false;

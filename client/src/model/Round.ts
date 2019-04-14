@@ -13,7 +13,7 @@ type EnabledRoundQualification = {
     threshold: number
 };
 
-type RoundQualification = DisabledRoundQualification | EnabledRoundQualification;
+export type RoundQualification = DisabledRoundQualification | EnabledRoundQualification;
 
 export interface Round {
     id: string;
@@ -21,16 +21,3 @@ export interface Round {
     displayName: string;
     qualification: RoundQualification;
 }
-
-// const f = (q:RoundQualification) => {
-//     if(q.type == QualificationType.SCORE) {
-//         const x = q.value;
-//     } else if(q.type == QualificationType.RANK) {
-        
-//     } else {
-//         q.
-//     }
-// }
-
-// export const isQualificationEnabled = (q: RoundQualification): q is DisabledRoundQualification =>
-//     q.type === QualificationType.NONE;
