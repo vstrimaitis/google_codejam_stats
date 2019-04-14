@@ -1,11 +1,11 @@
 {
-  "main.js": "/google_codejam_stats/static/js/main.b2a5f555.chunk.js",
-  "main.js.map": "/google_codejam_stats/static/js/main.b2a5f555.chunk.js.map",
+  "main.js": "/google_codejam_stats/static/js/main.321e5a37.chunk.js",
+  "main.js.map": "/google_codejam_stats/static/js/main.321e5a37.chunk.js.map",
   "runtime~main.js": "/google_codejam_stats/static/js/runtime~main.bb2a5726.js",
   "runtime~main.js.map": "/google_codejam_stats/static/js/runtime~main.bb2a5726.js.map",
-  "static/js/2.a9f94f69.chunk.js": "/google_codejam_stats/static/js/2.a9f94f69.chunk.js",
-  "static/js/2.a9f94f69.chunk.js.map": "/google_codejam_stats/static/js/2.a9f94f69.chunk.js.map",
+  "static/js/2.b4d4aa7e.chunk.js": "/google_codejam_stats/static/js/2.b4d4aa7e.chunk.js",
+  "static/js/2.b4d4aa7e.chunk.js.map": "/google_codejam_stats/static/js/2.b4d4aa7e.chunk.js.map",
   "index.html": "/google_codejam_stats/index.html",
-  "precache-manifest.d185a7a555dfe5b9d443df7c20a9c340.js": "/google_codejam_stats/precache-manifest.d185a7a555dfe5b9d443df7c20a9c340.js",
+  "precache-manifest.86b9c75121b75f3385145fc2a2d502bc.js": "/google_codejam_stats/precache-manifest.86b9c75121b75f3385145fc2a2d502bc.js",
   "service-worker.js": "/google_codejam_stats/service-worker.js"
 }
