@@ -96,7 +96,7 @@
                 "type": "RANK",
                 "threshold": 1500
             },
-            "areResultsOfficial": false
+            "areResultsOfficial": true
         }
     ]
 }
