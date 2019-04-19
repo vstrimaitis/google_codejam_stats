@@ -4,19 +4,16 @@ import { RoundInfo } from "../model/RoundInfo";
 import { RoundResult } from "../model/RoundResult";
 
 const handleErrors = <T>(r: AxiosResponse<T>) => {
-    if (r.status < 200 || r.status >= 300) throw new Error(r.status + ": " + r.statusText);
+    if (r.status < 200 || r.status >= 300)
+        throw new Error(r.status + ": " + r.statusText);
     return r.data;
 };
 
 export const fetchConfig = () =>
-    axios
-        .get<Config>("config.json")
-        .then(handleErrors)
+    axios.get<Config>("config.json").then(handleErrors);
 
 export const fetchRoundInfo = (roundId: string) =>
-    axios
-        .get<RoundInfo>(`round_data/info/${roundId}.json`)
-        .then(handleErrors);
+    axios.get<RoundInfo>(`round_data/info/${roundId}.json`).then(handleErrors);
 
 export const fetchRoundResults = (roundId: string) =>
     axios

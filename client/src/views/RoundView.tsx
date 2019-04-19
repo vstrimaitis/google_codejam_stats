@@ -10,7 +10,7 @@ export interface RoundViewState {
     isLoading: boolean;
 }
 
-export class RoundView extends Component<RouteComponentProps<{id: string}>, RoundViewState> {
+export class RoundView extends Component<RouteComponentProps<{ id: string }>, RoundViewState> {
     state: RoundViewState = {
         roundInfo: undefined,
         roundResults: [],
@@ -28,14 +28,14 @@ export class RoundView extends Component<RouteComponentProps<{id: string}>, Roun
             isLoading: false
         });
     }
-    
+
     renderLoading() {
         return <div>Loading...</div>;
     }
 
     render() {
-        const {roundInfo, roundResults} = this.state;
-        if(this.state.isLoading || !roundInfo) return this.renderLoading();
+        const { roundInfo, roundResults } = this.state;
+        if (this.state.isLoading || !roundInfo) return this.renderLoading();
         return (
             <div>
                 {roundInfo.challenge.additionalInfo}

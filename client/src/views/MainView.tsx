@@ -12,7 +12,7 @@ interface MainViewState {
     selectedRound?: Round;
 }
 
-interface MainViewProps extends WithStyles<typeof mainStyles> {}
+interface MainViewProps extends WithStyles<typeof mainStyles> { }
 
 export const MainView = withStyles(mainStyles)(class extends Component<MainViewProps, MainViewState> {
     state: MainViewState = {
@@ -30,7 +30,7 @@ export const MainView = withStyles(mainStyles)(class extends Component<MainViewP
     }
 
     render() {
-        const {isLoading, rounds, selectedRound} = this.state;
+        const { isLoading, rounds, selectedRound } = this.state;
         const classes = this.props.classes;
         return (
             <div className={classes.root}>
@@ -38,7 +38,7 @@ export const MainView = withStyles(mainStyles)(class extends Component<MainViewP
                     {...this.props}
                     isLoading={isLoading}
                     rounds={rounds}
-                    onRoundClicked={round => this.setState({selectedRound: round})}
+                    onRoundClicked={round => this.setState({ selectedRound: round })}
                 />
                 <RoundContainer
                     {...this.props}
@@ -48,5 +48,3 @@ export const MainView = withStyles(mainStyles)(class extends Component<MainViewP
         );
     }
 });
-
-// export const MainView = withStyles(styles)(MainView);

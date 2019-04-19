@@ -14,39 +14,39 @@ interface SidebarState {
     isDrawerOpen: boolean;
 }
 
-export const Sidebar = withStyles(mainStyles, {withTheme: true})(class extends Component<SidebarProps, SidebarState> {
+export const Sidebar = withStyles(mainStyles, { withTheme: true })(class extends Component<SidebarProps, SidebarState> {
     state: SidebarState = {
         isDrawerOpen: false
     }
 
     renderDrawer(toggleDrawer: boolean) {
-        const {classes, isLoading, rounds, onRoundClicked} = this.props;
+        const { classes, isLoading, rounds, onRoundClicked } = this.props;
         return (
             isLoading
-            ? <CircularProgress className={classes.progress} />
-            :
-            <List>
-                {rounds.map(round =>
-                    <ListItem key={round.id} button>
-                        <ListItemText
-                            primary={`${round.displayName} ${round.year}`}
-                            onClick={() => {
-                                if(toggleDrawer) this.handleDrawerToggle();
-                                onRoundClicked(round);
-                            }}
-                        />
-                    </ListItem>
-                )}
-            </List>
+                ? <CircularProgress className={classes.progress} />
+                :
+                <List>
+                    {rounds.map(round =>
+                        <ListItem key={round.id} button>
+                            <ListItemText
+                                primary={`${round.displayName} ${round.year}`}
+                                onClick={() => {
+                                    if (toggleDrawer) this.handleDrawerToggle();
+                                    onRoundClicked(round);
+                                }}
+                            />
+                        </ListItem>
+                    )}
+                </List>
         );
     }
 
     handleDrawerToggle = () => {
-        this.setState({isDrawerOpen: !this.state.isDrawerOpen});
+        this.setState({ isDrawerOpen: !this.state.isDrawerOpen });
     }
 
     render() {
-        const {classes} = this.props;
+        const { classes } = this.props;
         return (
             <div>
                 <Header onDrawerToggle={this.handleDrawerToggle} />
@@ -65,7 +65,7 @@ export const Sidebar = withStyles(mainStyles, {withTheme: true})(class extends C
                             {this.renderDrawer(true)}
                         </Drawer>
                     </Hidden>
-                    <Hidden xsDown implementation="css"> 
+                    <Hidden xsDown implementation="css">
                         <Drawer
                             className={classes.drawer}
                             variant="permanent"
@@ -74,7 +74,7 @@ export const Sidebar = withStyles(mainStyles, {withTheme: true})(class extends C
                             }}
                             open
                         >
-                            <div className={classes.toolbar}/>
+                            <div className={classes.toolbar} />
                             {this.renderDrawer(false)}
                         </Drawer>
                     </Hidden>

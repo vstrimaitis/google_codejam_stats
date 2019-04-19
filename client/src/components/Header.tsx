@@ -7,7 +7,7 @@ interface HeaderProps extends WithStyles<typeof mainStyles> {
     onDrawerToggle: () => void;
 }
 
-export const Header = withStyles(mainStyles)(({classes, onDrawerToggle}: HeaderProps) => (
+export const Header = withStyles(mainStyles)(({ classes, onDrawerToggle }: HeaderProps) => (
     <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
             <IconButton

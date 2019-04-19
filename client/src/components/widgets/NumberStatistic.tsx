@@ -15,7 +15,7 @@ interface NumberStatisticProps extends WithStyles<typeof styles> {
 }
 
 export const NumberStatistic = withStyles(styles)(
-    ({number, label, classes}: NumberStatisticProps) => (
+    ({ number, label, classes }: NumberStatisticProps) => (
         <Card>
             <CardContent className={classes.card}>
                 <Typography variant="h2">

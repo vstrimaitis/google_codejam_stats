@@ -9,7 +9,7 @@ interface GroupedBarChartProps extends WithStyles<typeof mainStyles>, WithTheme 
     label: string;
 }
 
-export const GroupedBarChart = withStyles(mainStyles, {withTheme: true})(({data, title, label, theme}: GroupedBarChartProps) => (
+export const GroupedBarChart = withStyles(mainStyles, { withTheme: true })(({ data, title, label, theme }: GroupedBarChartProps) => (
     <HorizontalBar
         options={{
             scales: {
@@ -19,7 +19,7 @@ export const GroupedBarChart = withStyles(mainStyles, {withTheme: true})(({data,
                     }
                 }]
             },
-            title: { 
+            title: {
                 display: true,
                 text: title
             },
@@ -29,7 +29,7 @@ export const GroupedBarChart = withStyles(mainStyles, {withTheme: true})(({data,
         }}
         data={{
             labels: Array.from(data.keys()),
-            datasets:[
+            datasets: [
                 {
                     label,
                     backgroundColor: theme.palette.primary.light,
