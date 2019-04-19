@@ -1,8 +1,9 @@
-import { CircularProgress, Drawer, Hidden, List, ListItem, ListItemText, WithStyles, withStyles, WithTheme } from "@material-ui/core";
+import { CircularProgress, Drawer, Hidden, List, ListItem, ListItemText, WithStyles, withStyles, WithTheme, Badge, Typography, Chip, Icon, Tooltip } from "@material-ui/core";
 import React, { Component } from "react";
 import { Round } from "../model/Round";
 import { mainStyles } from "../styles/main";
 import { Header } from "./Header";
+import { Warning } from "@material-ui/icons";
 
 interface SidebarProps extends WithStyles<typeof mainStyles>, WithTheme {
     isLoading: boolean;
@@ -19,6 +20,42 @@ export const Sidebar = withStyles(mainStyles, { withTheme: true })(class extends
         isDrawerOpen: false
     }
 
+    renderOfficialRoundLink = (toggleDrawer: boolean, round: Round) => (
+        <ListItem key={round.id} button>
+            <ListItemText
+                disableTypography={true}
+                onClick={() => {
+                    if (toggleDrawer) this.handleDrawerToggle();
+                    this.props.onRoundClicked(round);
+                }}
+            >
+                <Typography>
+                    {`${round.displayName} ${round.year}`}
+                </Typography>
+            </ListItemText>
+        </ListItem>
+    );
+
+    renderUnofficialRoundLink = (toggleDrawer: boolean, round: Round) => (
+        <Tooltip title="Results are not official yet" placement="right">
+            <ListItem key={round.id} button>
+                <ListItemText
+                    disableTypography={true}
+                    onClick={() => {
+                        if (toggleDrawer) this.handleDrawerToggle();
+                        this.props.onRoundClicked(round);
+                    }}
+                >
+                    <Badge variant="dot" color="secondary">
+                        <Typography>
+                            {`${round.displayName} ${round.year}`}
+                        </Typography>
+                    </Badge>
+                </ListItemText>
+            </ListItem>
+        </Tooltip>
+    );
+
     renderDrawer(toggleDrawer: boolean) {
         const { classes, isLoading, rounds, onRoundClicked } = this.props;
         return (
@@ -27,15 +64,10 @@ export const Sidebar = withStyles(mainStyles, { withTheme: true })(class extends
                 :
                 <List>
                     {rounds.map(round =>
-                        <ListItem key={round.id} button>
-                            <ListItemText
-                                primary={`${round.displayName} ${round.year}`}
-                                onClick={() => {
-                                    if (toggleDrawer) this.handleDrawerToggle();
-                                    onRoundClicked(round);
-                                }}
-                            />
-                        </ListItem>
+                        round.areResultsOfficial
+                            ? this.renderOfficialRoundLink(toggleDrawer, round)
+                            : this.renderUnofficialRoundLink(toggleDrawer,
+                                round)
                     )}
                 </List>
         );
