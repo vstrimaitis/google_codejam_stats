@@ -66,8 +66,9 @@ def get_info_file_path(round_id):
 def download_info(round_id):
     info_file = get_info_file_path(round_id)
     if os.path.exists(info_file):
-        print(f"The file {info_file} already exists. Please delete it if you want to redownload the info.")
-        return
+        response = input(f"The file {info_file} already exists. Do you want to overwrite it? (y/n)\n")
+        if response.upper() != "Y":
+            return
     ensure_dir_exists(info_file)
     results = get_results_by_page(round_id, 0, 0)
     del results["userScores"]
@@ -85,8 +86,9 @@ def download_scores(round_id):
     all_scores = []
 
     if os.path.exists(score_file):
-        print(f"The file {score_file} already exists. Please delete it if you want to redownload the scores.")
-        return
+        result = input(f"The file {score_file} already exists. Do you want to overwrite it? (y/n)\n")
+        if result.upper() != "Y":
+            return
 
     ensure_dir_exists(score_file)
 
