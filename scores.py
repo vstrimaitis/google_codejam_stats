@@ -153,7 +153,7 @@ def build_round_config_entry(round_id, round_info):
         "year": int(parts[1]),
         "displayName": parts[0],
         "qualification": resolve_qualification_type(challenge["additionalInfo"]),
-        "areResultsOfficial": bool(challenge["areResultsFinal"])
+        "areResultsOfficial": False # NOTE: True must be set by hand
     }
 
 def update_config(round_id, round_info):
