@@ -12,6 +12,7 @@ URL = lambda contest_id, query: f"https://codejam.googleapis.com/scoreboard/{con
 SCRIPT_PATH = os.path.dirname(os.path.abspath(__file__))
 
 OUTPUT_ROOT = os.path.join(SCRIPT_PATH, "client/public/round_data/")
+CONFIG_FILE_PATH = os.path.join(SCRIPT_PATH, "client/public/config.json")
 SCORES_ROOT = os.path.join(OUTPUT_ROOT, "scores")
 INFO_ROOT = os.path.join(OUTPUT_ROOT, "info")
 PAGE_SIZE = 200
@@ -75,6 +76,7 @@ def download_info(round_id, skip_prompt):
     results = get_results_by_page(round_id, 0, 0)
     del results["userScores"]
     save_progress(info_file, results)
+    return results
 
 def get_scoreboard_size(round_id):
     with open(get_info_file_path(round_id), "r") as f:
@@ -122,6 +124,51 @@ def print_stats(round_id, country):
         for r in results:
             print(f"{str(r['rank']).center(RANK_W)}|{str(r['displayname']).center(USERNAME_W)}|{str(r['score1']).center(SCORE_W)}")
 
+def resolve_qualification_type(info_str):
+    rank_pattern = re.compile(r"^The top (\d+) contestants .*")
+    score_pattern = re.compile(r"^Contestants with at least (\d+) points .*")
+    if rank_pattern.match(info_str):
+        result = rank_pattern.search(info_str)
+        rank = int(result.group(1))
+        return {
+            "type": "RANK",
+            "threshold": rank
+        }
+    if score_pattern.match(info_str):
+        result = score_pattern.search(info_str)
+        score = int(result.group(1))
+        return {
+            "type": "SCORE",
+            "threshold": score
+        }
+    return {
+        "type": "NONE"
+    }
+
+def build_round_config_entry(round_id, round_info):
+    challenge = round_info["challenge"]
+    parts = challenge["title"].rsplit(" ", 1)
+    return {
+        "id": round_id,
+        "year": int(parts[1]),
+        "displayName": parts[0],
+        "qualification": resolve_qualification_type(challenge["additionalInfo"]),
+        "areResultsOfficial": bool(challenge["areResultsFinal"])
+    }
+
+def update_config(round_id, round_info):
+    with open(CONFIG_FILE_PATH, "r") as f:
+        cfg = json.loads(f.read())
+    if cfg == None:
+        cfg = dict()
+    if "rounds" not in cfg:
+        cfg["rounds"] = []
+    rounds = [r for r in cfg["rounds"] if r["id"] != round_id]
+    rounds.append(build_round_config_entry(round_id, round_info))
+    cfg["rounds"] = rounds
+    with open(CONFIG_FILE_PATH, "w") as f:
+        json.dump(cfg, f, indent=4)
+
 if __name__ == "__main__":
     # download_scores()
     # print_stats("Lithuania")
@@ -130,5 +177,6 @@ if __name__ == "__main__":
     parser.add_argument("round_id", help="The ID of the round (can be found at the end of the round URL)")
     parser.add_argument("-y", action="store_true")
     args = parser.parse_args()
-    download_info(args.round_id, args.y)
+    round_info = download_info(args.round_id, args.y)
+    update_config(args.round_id, round_info)
     download_scores(args.round_id, args.y)
