@@ -9,7 +9,9 @@ import requests
 from convert import json_to_camel_case
 
 URL = lambda contest_id, query: f"https://codejam.googleapis.com/scoreboard/{contest_id}/poll?p={query}"
-OUTPUT_ROOT = "./client/public/round_data/"
+SCRIPT_PATH = os.path.dirname(os.path.abspath(__file__))
+
+OUTPUT_ROOT = os.path.join(SCRIPT_PATH, "client/public/round_data/")
 SCORES_ROOT = os.path.join(OUTPUT_ROOT, "scores")
 INFO_ROOT = os.path.join(OUTPUT_ROOT, "info")
 PAGE_SIZE = 200
@@ -63,9 +65,9 @@ def get_score_file_path(round_id):
 def get_info_file_path(round_id):
     return os.path.join(INFO_ROOT, f"{round_id}.json")
 
-def download_info(round_id):
+def download_info(round_id, skip_prompt):
     info_file = get_info_file_path(round_id)
-    if os.path.exists(info_file):
+    if os.path.exists(info_file) and not skip_prompt:
         response = input(f"The file {info_file} already exists. Do you want to overwrite it? (y/n)\n")
         if response.upper() != "Y":
             return
@@ -79,13 +81,13 @@ def get_scoreboard_size(round_id):
         res = json.load(f)
         return res["fullScoreboardSize"]
 
-def download_scores(round_id):
+def download_scores(round_id, skip_prompt):
     curr_page = 0
     scoreboard_size = get_scoreboard_size(round_id)
     score_file = get_score_file_path(round_id)
     all_scores = []
 
-    if os.path.exists(score_file):
+    if os.path.exists(score_file) and not skip_prompt:
         result = input(f"The file {score_file} already exists. Do you want to overwrite it? (y/n)\n")
         if result.upper() != "Y":
             return
@@ -126,6 +128,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Download results for a Google Code Jam round")
     parser.add_argument("round_id", help="The ID of the round (can be found at the end of the round URL)")
+    parser.add_argument("-y", action="store_true")
     args = parser.parse_args()
-    download_info(args.round_id)
-    download_scores(args.round_id)
+    download_info(args.round_id, args.y)
+    download_scores(args.round_id, args.y)
