@@ -97,6 +97,26 @@
                 "threshold": 1500
             },
             "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000051706",
+            "year": 2019,
+            "displayName": "Round 1B",
+            "qualification": {
+                "type": "RANK",
+                "threshold": 1500
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "00000000000516b9",
+            "year": 2019,
+            "displayName": "Round 1C",
+            "qualification": {
+                "type": "RANK",
+                "threshold": 1500
+            },
+            "areResultsOfficial": false
         }
     ]
 }
