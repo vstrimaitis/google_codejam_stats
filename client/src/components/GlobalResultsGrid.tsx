@@ -8,6 +8,7 @@ import { getMaxScore, getNumberOfParticipantsByCountry, getAverageScoreByCountry
 import { NumberStatistic } from "./widgets/NumberStatistic";
 import { GroupedBarChart } from "./widgets/GroupedBarChart";
 import { Bar } from "react-chartjs-2";
+import { ResultsTable } from "./widgets/ResultsTable";
 
 interface GlobalResultsGridProps extends WithStyles<typeof mainStyles>, WithTheme {
     results: RoundResult[];
@@ -104,12 +105,13 @@ export const GlobalResultsGrid = withStyles(mainStyles, { withTheme: true })(
                         }}
                     />
                 </Grid>
-                {/* <Grid item xs={12}>
+                <Grid item xs={12}>
                     <ResultsTable
                         results={results}
                         qualification={qualification}
+                        showCountry={true}
                     />
-                </Grid> */}
+                </Grid>
             </Grid>
         );
     }

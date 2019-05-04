@@ -83,6 +83,7 @@ export const CountryResultsGrid = withStyles(mainStyles, { withTheme: true })(
                     <ResultsTable
                         results={results}
                         qualification={round.qualification}
+                        showCountry={false}
                     />
                 </Grid>
             </Grid>
