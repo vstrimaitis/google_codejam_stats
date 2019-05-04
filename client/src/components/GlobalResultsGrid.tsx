@@ -6,9 +6,8 @@ import { Round } from "../model/Round";
 import { RoundInfo } from "../model/RoundInfo";
 import { getMaxScore, getNumberOfParticipantsByCountry, getAverageScoreByCountry, getNumberOfParticipantsWithScoreByCountry, groupByScore, getParticipantsWithScore, getTotalSubmissions, getParticipantsWithAtLeastOneSolved } from "../utils/stats";
 import { NumberStatistic } from "./widgets/NumberStatistic";
-import { GroupedBarChart } from "./widgets/GroupedBarChart";
-import { Bar } from "react-chartjs-2";
 import { ResultsTable } from "./widgets/ResultsTable";
+import { BarChartType, BarChart } from "./widgets/BarChart";
 
 interface GlobalResultsGridProps extends WithStyles<typeof mainStyles>, WithTheme {
     results: RoundResult[];
@@ -17,7 +16,7 @@ interface GlobalResultsGridProps extends WithStyles<typeof mainStyles>, WithThem
 }
 
 export const GlobalResultsGrid = withStyles(mainStyles, { withTheme: true })(
-    ({ results, round, roundInfo, theme }: GlobalResultsGridProps) => {
+    ({ results, round, roundInfo }: GlobalResultsGridProps) => {
         const qualification = round.qualification;
         const maxScore = getMaxScore(roundInfo);
         const maxEntries = 10;
@@ -52,57 +51,35 @@ export const GlobalResultsGrid = withStyles(mainStyles, { withTheme: true })(
                     />
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <GroupedBarChart
+                    <BarChart
+                        type={BarChartType.HORIZONTAL}
                         data={groupsByParticipants}
                         title={`Number of participants per country (top ${groupsByParticipants.size})`}
                         label="number of participants"
                     />
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <GroupedBarChart
+                    <BarChart
+                        type={BarChartType.HORIZONTAL}
                         data={groupsByAverageScore}
                         title={`Top ${groupsByAverageScore.size} countries by average score`}
                         label="average score"
                     />
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <GroupedBarChart
+                    <BarChart
+                        type={BarChartType.HORIZONTAL}
                         data={groupsByTopScorers}
                         title={`Top ${groupsByTopScorers.size} countries with the most top-scorers`}
                         label="number of top-scorers"
                     />
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <Bar
-                        options={{
-                            scales: {
-                                xAxes: [{
-                                    ticks: {
-                                        beginAtZero: true
-                                    },
-                                    barPercentage: 1.0,
-                                    categoryPercentage: 1.0
-                                }]
-                            },
-                            title: {
-                                display: true,
-                                text: "Score distribution"
-                            },
-                            legend: {
-                                display: false
-                            }
-                        }}
-                        data={{
-                            labels: Array.from(groupsByScore.keys()),
-                            datasets: [
-                                {
-                                    label: "number of participants",
-                                    backgroundColor: theme.palette.primary.light,
-                                    hoverBackgroundColor: theme.palette.secondary.light,
-                                    data: Array.from(groupsByScore.values())
-                                }
-                            ]
-                        }}
+                    <BarChart
+                        type={BarChartType.VERTICAL}
+                        data={groupsByScore}
+                        title="Score distribution"
+                        label="number of participants"
                     />
                 </Grid>
                 <Grid item xs={12}>

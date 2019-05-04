@@ -6,8 +6,8 @@ import { Round } from "../model/Round";
 import { RoundInfo } from "../model/RoundInfo";
 import { NumberStatistic } from "./widgets/NumberStatistic";
 import { getParticipantsWithScore, getParticipantsWithAtLeastOneSolved, didQualify, getMaxScore, groupByScore } from "../utils/stats";
-import { Bar } from "react-chartjs-2";
 import { ResultsTable } from "./widgets/ResultsTable";
+import { BarChartType, BarChart } from "./widgets/BarChart";
 
 interface CountryResultsGridProps extends WithStyles<typeof mainStyles>, WithTheme {
     results: RoundResult[];
@@ -47,36 +47,11 @@ export const CountryResultsGrid = withStyles(mainStyles, { withTheme: true })(
                     />
                 </Grid>
                 <Grid item xs={12}>
-                    <Bar
-                        options={{
-                            scales: {
-                                xAxes: [{
-                                    ticks: {
-                                        beginAtZero: true
-                                    },
-                                    barPercentage: 1.0,
-                                    categoryPercentage: 1.0
-                                }]
-                            },
-                            title: {
-                                display: true,
-                                text: "Score distribution"
-                            },
-                            legend: {
-                                display: false
-                            }
-                        }}
-                        data={{
-                            labels: Array.from(groupsByScore.keys()),
-                            datasets: [
-                                {
-                                    label: "number of participants",
-                                    backgroundColor: theme.palette.primary.light,
-                                    hoverBackgroundColor: theme.palette.secondary.light,
-                                    data: Array.from(groupsByScore.values())
-                                }
-                            ]
-                        }}
+                    <BarChart
+                        type={BarChartType.VERTICAL}
+                        data={groupsByScore}
+                        title="Score distribution"
+                        label="number of participants"
                     />
                 </Grid>
                 <Grid item xs={12}>

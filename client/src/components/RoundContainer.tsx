@@ -1,19 +1,13 @@
-import { CircularProgress, Grid, Icon, Paper, Table, TableBody, TableCell, TableHead, TableRow, Typography, WithStyles, withStyles, WithTheme, Select, MenuItem } from "@material-ui/core";
-import { Check, Clear } from "@material-ui/icons";
+import { CircularProgress, Grid, Typography, WithStyles, withStyles, WithTheme } from "@material-ui/core";
 import React, { Component } from "react";
-import { Bar } from "react-chartjs-2";
-import { QualificationType, Round } from "../model/Round";
+import { Round } from "../model/Round";
 import { RoundInfo } from "../model/RoundInfo";
 import { RoundResult } from "../model/RoundResult";
 import { mainStyles } from "../styles/main";
 import { fetchRoundInfo, fetchRoundResults } from "../utils/api";
-import { getAverageScoreByCountry, getMaxScore, getNumberOfParticipantsByCountry, getNumberOfParticipantsWithScoreByCountry, getParticipantsWithAtLeastOneSolved, getParticipantsWithScore, getTotalSubmissions, groupByScore, didQualify, isQualificationEnabled } from "../utils/stats";
-import { GroupedBarChart } from "./widgets/GroupedBarChart";
-import { NumberStatistic } from "./widgets/NumberStatistic";
-import { ResultsTable } from "./widgets/ResultsTable";
-import { CountrySelect } from "./CountrySelect";
 import { GlobalResultsGrid } from "./GlobalResultsGrid";
 import { CountryResultsGrid } from "./CountryResultsGrid";
+import { CountrySelect } from "./CountrySelect";
 
 interface RoundContainerProps extends WithStyles<typeof mainStyles>, WithTheme {
     round?: Round;
