@@ -18,6 +18,13 @@ least when I developed this), the API seemed to allow getting at most 200
 entries with one request. So the script retrieves the data in windows of size
 200 until all the results are downloaded.
 
+To run the script, use the command line `python scores.py <round_id>`, where
+`round_id` is the ID of the round and can be extracted from the URL of the
+contest, which you want to download the data for. For example, the URL of the
+Qualification Round 2019 is
+`https://codingcompetitions.withgoogle.com/codejam/round/0000000000051705`. The
+ID of this round in this case is `0000000000051705`. 
+
 The folder `client/` holds the client code. It is written using React and
 TypeScript. The actual data, downloaded by the mentioned script is stored in
 `client/public/round_data/` and served as a static resource. It would, of
