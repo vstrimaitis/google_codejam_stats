@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "/google_codejam_stats/static/js/2.4dc8de67.chunk.js"
   },
   {
-    "revision": "b56dc0edae1709c52deb753c383ca890",
+    "revision": "15c29f84a768fc52889c2039d852372e",
     "url": "/google_codejam_stats/index.html"
   }
 ];
