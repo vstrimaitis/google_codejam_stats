@@ -1,10 +1,5 @@
 import React, { Component } from "react";
-import { Round } from "./model/Round";
-import { fetchConfig } from "./utils/api";
-import { Switch, Route } from "react-router";
 import { MainView } from "./views/MainView";
-import { HashRouter } from "react-router-dom";
-import { RoundView } from "./views/RoundView";
 import { createMuiTheme, MuiThemeProvider, CssBaseline } from "@material-ui/core";
 import { pink, indigo } from "@material-ui/core/colors";
 
