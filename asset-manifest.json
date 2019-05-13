@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/google_codejam_stats/static/js/main.8bcb6663.chunk.js",
-    "main.js.map": "/google_codejam_stats/static/js/main.8bcb6663.chunk.js.map",
+    "main.js": "/google_codejam_stats/static/js/main.d5ccd881.chunk.js",
+    "main.js.map": "/google_codejam_stats/static/js/main.d5ccd881.chunk.js.map",
     "runtime~main.js": "/google_codejam_stats/static/js/runtime~main.bb2a5726.js",
     "runtime~main.js.map": "/google_codejam_stats/static/js/runtime~main.bb2a5726.js.map",
     "static/js/2.c41d694c.chunk.js": "/google_codejam_stats/static/js/2.c41d694c.chunk.js",
     "static/js/2.c41d694c.chunk.js.map": "/google_codejam_stats/static/js/2.c41d694c.chunk.js.map",
     "index.html": "/google_codejam_stats/index.html",
-    "precache-manifest.5294b048a0e34575ce2ef253b9d96b95.js": "/google_codejam_stats/precache-manifest.5294b048a0e34575ce2ef253b9d96b95.js",
+    "precache-manifest.b428e74f6d9c7a976ee288dc5a2e7c73.js": "/google_codejam_stats/precache-manifest.b428e74f6d9c7a976ee288dc5a2e7c73.js",
     "service-worker.js": "/google_codejam_stats/service-worker.js"
   }
 }
