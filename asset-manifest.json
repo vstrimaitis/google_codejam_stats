@@ -1,11 +1,13 @@
 {
-  "main.js": "/google_codejam_stats/static/js/main.5e9011f1.chunk.js",
-  "main.js.map": "/google_codejam_stats/static/js/main.5e9011f1.chunk.js.map",
-  "runtime~main.js": "/google_codejam_stats/static/js/runtime~main.bb2a5726.js",
-  "runtime~main.js.map": "/google_codejam_stats/static/js/runtime~main.bb2a5726.js.map",
-  "static/js/2.4dc8de67.chunk.js": "/google_codejam_stats/static/js/2.4dc8de67.chunk.js",
-  "static/js/2.4dc8de67.chunk.js.map": "/google_codejam_stats/static/js/2.4dc8de67.chunk.js.map",
-  "index.html": "/google_codejam_stats/index.html",
-  "precache-manifest.0b2c4586a2972417687a9e6af27a0f2b.js": "/google_codejam_stats/precache-manifest.0b2c4586a2972417687a9e6af27a0f2b.js",
-  "service-worker.js": "/google_codejam_stats/service-worker.js"
+  "files": {
+    "main.js": "/google_codejam_stats/static/js/main.8bcb6663.chunk.js",
+    "main.js.map": "/google_codejam_stats/static/js/main.8bcb6663.chunk.js.map",
+    "runtime~main.js": "/google_codejam_stats/static/js/runtime~main.bb2a5726.js",
+    "runtime~main.js.map": "/google_codejam_stats/static/js/runtime~main.bb2a5726.js.map",
+    "static/js/2.c41d694c.chunk.js": "/google_codejam_stats/static/js/2.c41d694c.chunk.js",
+    "static/js/2.c41d694c.chunk.js.map": "/google_codejam_stats/static/js/2.c41d694c.chunk.js.map",
+    "index.html": "/google_codejam_stats/index.html",
+    "precache-manifest.5294b048a0e34575ce2ef253b9d96b95.js": "/google_codejam_stats/precache-manifest.5294b048a0e34575ce2ef253b9d96b95.js",
+    "service-worker.js": "/google_codejam_stats/service-worker.js"
+  }
 }
