@@ -30,7 +30,7 @@ export const RoundContainer = withStyles(mainStyles, { withTheme: true })(
         }
 
         async componentWillReceiveProps(nextProps: RoundContainerProps) {
-            if (this.props == nextProps) return;
+            if (this.props === nextProps) return;
             if (!nextProps.round) {
                 this.setState({ isLoading: false, roundInfo: undefined, roundResults: [] });
                 return;

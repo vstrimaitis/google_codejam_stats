@@ -2,6 +2,7 @@ import { AppBar, IconButton, Toolbar, Typography, WithStyles, withStyles } from 
 import { Menu } from "@material-ui/icons";
 import React from "react";
 import { mainStyles } from "../styles/main";
+import { Github } from "./icons/Github";
 
 interface HeaderProps extends WithStyles<typeof mainStyles> {
     onDrawerToggle: () => void;
@@ -29,12 +30,21 @@ export const Header = withStyles(mainStyles)(({ classes, onDrawerToggle }: Heade
             >
                 <Menu />
             </IconButton>
-            <Typography variant="h6" color="inherit" noWrap>
-                Google Code Jam Statistics
+            <Typography variant="h6" color="inherit" noWrap style={{flexGrow: 1}}>
+                Google Code Jam Stats
                 <Typography variant="caption" color="inherit" noWrap>
                     {formatLastUpdateDate()}
                 </Typography>
             </Typography>
+            <IconButton
+                component="a"
+                title="GitHub"
+                color="inherit"
+                href="https://github.com/vstrimaitis/google_codejam_stats"
+                target="_blank"
+            >
+                <Github />
+            </IconButton>
         </Toolbar>
     </AppBar>
 ));

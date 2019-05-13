@@ -18,7 +18,6 @@ interface CountryResultsGridProps extends WithStyles<typeof mainStyles>, WithThe
 export const CountryResultsGrid = withStyles(mainStyles, { withTheme: true })(
     ({ results, round, roundInfo, theme }: CountryResultsGridProps) => {
         const maxScore = getMaxScore(roundInfo);
-        const maxEntries = 10;
         const groupsByScore = groupByScore(results, 0, maxScore);
         return (
             <Grid container spacing={16}>

@@ -1,9 +1,8 @@
-import { CircularProgress, Drawer, Hidden, List, ListItem, ListItemText, WithStyles, withStyles, WithTheme, Badge, Typography, Chip, Icon, Tooltip } from "@material-ui/core";
+import { CircularProgress, Drawer, Hidden, List, ListItem, ListItemText, WithStyles, withStyles, WithTheme, Badge, Typography, Tooltip } from "@material-ui/core";
 import React, { Component } from "react";
 import { Round } from "../model/Round";
 import { mainStyles } from "../styles/main";
 import { Header } from "./Header";
-import { Warning } from "@material-ui/icons";
 
 interface SidebarProps extends WithStyles<typeof mainStyles>, WithTheme {
     isLoading: boolean;
@@ -57,7 +56,7 @@ export const Sidebar = withStyles(mainStyles, { withTheme: true })(class extends
     );
 
     renderDrawer(toggleDrawer: boolean) {
-        const { classes, isLoading, rounds, onRoundClicked } = this.props;
+        const { classes, isLoading, rounds } = this.props;
         return (
             isLoading
                 ? <CircularProgress className={classes.progress} />

@@ -86,7 +86,7 @@ const renderVertical = ({ data, title, label, theme }: BarChartProps) => (
 
 export const BarChart = withStyles(mainStyles, { withTheme: true })(
     (props: BarChartProps) => (
-        props.type == BarChartType.HORIZONTAL
+        props.type === BarChartType.HORIZONTAL
             ? renderHorizontal(props)
             : renderVertical(props)
     ));

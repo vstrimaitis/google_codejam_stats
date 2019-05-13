@@ -1,6 +1,6 @@
 import React from "react";
 import { mainStyles } from "../../styles/main";
-import { WithStyles, WithTheme, withStyles, Paper, Table, TableHead, TableRow, TableCell, TableBody, Icon } from "@material-ui/core";
+import { WithStyles, WithTheme, withStyles, Paper, Icon } from "@material-ui/core";
 import { isQualificationEnabled, didQualify } from "../../utils/stats";
 import { RoundResult } from "../../model/RoundResult";
 import { RoundQualification } from "../../model/Round";

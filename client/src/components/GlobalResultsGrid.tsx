@@ -1,5 +1,5 @@
 import React from "react";
-import { withStyles, WithStyles, WithTheme, Grid, Select } from "@material-ui/core";
+import { withStyles, WithStyles, WithTheme, Grid } from "@material-ui/core";
 import { mainStyles } from "../styles/main";
 import { RoundResult } from "../model/RoundResult";
 import { Round } from "../model/Round";
