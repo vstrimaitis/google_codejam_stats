@@ -126,6 +126,16 @@
                 "type": "RANK",
                 "threshold": 1000
             },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000051707",
+            "year": 2019,
+            "displayName": "Round 3",
+            "qualification": {
+                "type": "RANK",
+                "threshold": 25
+            },
             "areResultsOfficial": false
         }
     ]
