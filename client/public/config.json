@@ -117,6 +117,25 @@
                 "threshold": 1500
             },
             "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000051707",
+            "year": 2019,
+            "displayName": "Round 3",
+            "qualification": {
+                "type": "RANK",
+                "threshold": 25
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000051708",
+            "year": 2019,
+            "displayName": "World Finals",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
         }
     ]
 }
