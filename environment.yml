@@ -1,0 +1,4 @@
+# To create env: conda env create -f environment.yml
+name: gcj_stats
+dependencies:
+  - requests==2.23.0
