@@ -146,6 +146,15 @@
                 "type": "NONE"
             },
             "areResultsOfficial": true
+        },
+        {
+            "id": "000000000019fd27",
+            "year": 2020,
+            "displayName": "Qualification Round",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": false
         }
     ]
 }
