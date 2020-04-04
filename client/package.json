@@ -12,7 +12,7 @@
         "@types/react-chartjs-2": "^2.5.7",
         "@types/react-dom": "16.8.3",
         "@types/react-select": "^2.0.16",
-        "axios": "^0.18.0",
+        "axios": "^0.18.1",
         "chart.js": "^2.8.0",
         "mui-datatables": "^2.0.0",
         "react": "^16.8.6",
