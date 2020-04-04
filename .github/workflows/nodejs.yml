@@ -6,11 +6,11 @@ name: Node.js CI
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    paths:
+      - 'client/**'
 
 jobs:
-  build:
+  deploy:
 
     runs-on: ubuntu-latest
 
