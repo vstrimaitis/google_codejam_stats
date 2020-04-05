@@ -8,8 +8,6 @@ import { fetchRoundInfo, fetchRoundResults } from "../utils/api";
 import { GlobalResultsGrid } from "./GlobalResultsGrid";
 import { CountryResultsGrid } from "./CountryResultsGrid";
 import { CountrySelect } from "./CountrySelect";
-import { sortByTotalValue } from "../utils/task";
-import { TaskCard } from "./TaskCard";
 import { TaskGrid } from "./TaskGrid";
 
 interface RoundContainerProps extends WithStyles<typeof mainStyles>, WithTheme {

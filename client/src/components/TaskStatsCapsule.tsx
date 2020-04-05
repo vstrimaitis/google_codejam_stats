@@ -1,5 +1,5 @@
 import React from "react";
-import { withStyles, WithStyles, Grid, createStyles, Theme, Tooltip } from "@material-ui/core";
+import { withStyles, WithStyles, createStyles, Theme, Tooltip } from "@material-ui/core";
 import { mainStyles } from "../styles/main";
 import { Task, RoundInfo } from "../model/RoundInfo";
 
