@@ -85,7 +85,7 @@ export const GlobalResultsGrid = withStyles(mainStyles, { withTheme: true })(
                 <Grid item xs={12}>
                     <ResultsTable
                         results={results}
-                        qualification={qualification}
+                        round={round}
                         showCountry={true}
                     />
                 </Grid>

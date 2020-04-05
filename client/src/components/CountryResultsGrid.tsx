@@ -56,7 +56,7 @@ export const CountryResultsGrid = withStyles(mainStyles, { withTheme: true })(
                 <Grid item xs={12}>
                     <ResultsTable
                         results={results}
-                        qualification={round.qualification}
+                        round={round}
                         showCountry={false}
                     />
                 </Grid>
