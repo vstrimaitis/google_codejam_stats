@@ -20,14 +20,14 @@ export const mainStyles = (theme: Theme) =>
         },
         content: {
             flexGrow: 1,
-            padding: theme.spacing.unit * 3,
+            padding: theme.spacing(3),
             display: "flex",
             flexDirection: "column",
             overflowX: "auto"
         },
         toolbar: theme.mixins.toolbar,
         progress: {
-            margin: theme.spacing.unit * 2,
+            margin: theme.spacing(2),
             alignSelf: "center"
         },
         menuButton: {

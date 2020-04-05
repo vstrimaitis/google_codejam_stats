@@ -8,9 +8,6 @@ const theme = createMuiTheme({
         primary: indigo,
         secondary: pink,
         type: "light"
-    },
-    typography: {
-        useNextVariants: true
     }
 });
 

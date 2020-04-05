@@ -60,8 +60,17 @@ export const RoundContainer = withStyles(mainStyles, { withTheme: true })(
                 results = results.filter(r => r.country.toUpperCase() === country.toUpperCase());
             }
             return (
-                <Grid container spacing={16}>
+                <Grid container spacing={2}>
                     <Grid item xs={12}>
+                        <Typography variant="h3" gutterBottom>
+                            Problems
+                        </Typography>
+                        {this.state.roundInfo?.challenge.tasks.map(task => <p>{task.title}</p>)}
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Typography variant="h3" gutterBottom>
+                            Country stats
+                        </Typography>
                         <CountrySelect
                             selectedCountry={this.state.selectedCountry}
                             onSelectionChanged={country => this.setState({ selectedCountry: country })}

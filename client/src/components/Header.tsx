@@ -30,12 +30,14 @@ export const Header = withStyles(mainStyles)(({ classes, onDrawerToggle }: Heade
             >
                 <Menu />
             </IconButton>
-            <Typography variant="h6" color="inherit" noWrap style={{flexGrow: 1}}>
-                Google Code Jam Stats
+            <div style={{ flexGrow: 1 }}>
+                <Typography variant="h6" color="inherit" noWrap>
+                    Google Code Jam Stats
+                </Typography>
                 <Typography variant="caption" color="inherit" noWrap>
                     {formatLastUpdateDate()}
                 </Typography>
-            </Typography>
+            </div>
             <IconButton
                 component="a"
                 title="GitHub"
@@ -46,5 +48,5 @@ export const Header = withStyles(mainStyles)(({ classes, onDrawerToggle }: Heade
                 <Github />
             </IconButton>
         </Toolbar>
-    </AppBar>
+    </AppBar >
 ));

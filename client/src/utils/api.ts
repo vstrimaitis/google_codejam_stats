@@ -3,6 +3,10 @@ import { Config } from "../model/Config";
 import { RoundInfo } from "../model/RoundInfo";
 import { RoundResult } from "../model/RoundResult";
 
+const axiosInstance = axios.create({
+    baseURL: "/google_codejam_stats"
+})
+
 const handleErrors = <T>(r: AxiosResponse<T>) => {
     if (r.status < 200 || r.status >= 300)
         throw new Error(r.status + ": " + r.statusText);
@@ -10,12 +14,12 @@ const handleErrors = <T>(r: AxiosResponse<T>) => {
 };
 
 export const fetchConfig = () =>
-    axios.get<Config>("config.json").then(handleErrors);
+    axiosInstance.get<Config>("config.json").then(handleErrors);
 
 export const fetchRoundInfo = (roundId: string) =>
-    axios.get<RoundInfo>(`round_data/info/${roundId}.json`).then(handleErrors);
+    axiosInstance.get<RoundInfo>(`round_data/info/${roundId}.json`).then(handleErrors);
 
 export const fetchRoundResults = (roundId: string) =>
-    axios
+    axiosInstance
         .get<RoundResult[]>(`round_data/scores/${roundId}.json`)
         .then(handleErrors);

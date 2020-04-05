@@ -53,9 +53,9 @@ export const ResultsTable = withStyles(mainStyles, { withTheme: true })(
                     print: false,
                     rowsPerPageOptions: [10, 25, 50, 100, 500],
                     rowsPerPage: 50,
-                    responsive: "scroll",
+                    responsive: "scrollMaxHeight",
                     filter: false,
-                    selectableRows: false,
+                    selectableRows: "none",
                     viewColumns: false
                 }}
             />

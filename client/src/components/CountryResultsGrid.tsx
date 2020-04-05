@@ -20,7 +20,7 @@ export const CountryResultsGrid = withStyles(mainStyles, { withTheme: true })(
         const maxScore = getMaxScore(roundInfo);
         const groupsByScore = groupByScore(results, 0, maxScore);
         return (
-            <Grid container spacing={16}>
+            <Grid container spacing={2}>
                 <Grid item xs={12} sm={6} md={3}>
                     <NumberStatistic
                         number={results.length}
