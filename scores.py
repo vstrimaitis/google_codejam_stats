@@ -125,8 +125,8 @@ def print_stats(round_id, country):
             print(f"{str(r['rank']).center(RANK_W)}|{str(r['displayname']).center(USERNAME_W)}|{str(r['score1']).center(SCORE_W)}")
 
 def resolve_qualification_type(info_str):
-    rank_pattern = re.compile(r"^The top (\d+) contestants .*")
-    score_pattern = re.compile(r"^Contestants with at least (\d+) points .*")
+    rank_pattern = re.compile(r".*top (\d+) .*")
+    score_pattern = re.compile(r".* (\d+) points.*")
     if rank_pattern.match(info_str):
         result = rank_pattern.search(info_str)
         rank = int(result.group(1))
