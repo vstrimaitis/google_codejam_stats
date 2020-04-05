@@ -17,7 +17,6 @@ interface GlobalResultsGridProps extends WithStyles<typeof mainStyles>, WithThem
 
 export const GlobalResultsGrid = withStyles(mainStyles, { withTheme: true })(
     ({ results, round, roundInfo }: GlobalResultsGridProps) => {
-        const qualification = round.qualification;
         const maxScore = getMaxScore(roundInfo);
         const maxEntries = 10;
         const groupsByParticipants = getNumberOfParticipantsByCountry(results, maxEntries);

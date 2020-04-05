@@ -3,7 +3,7 @@ import { mainStyles } from "../../styles/main";
 import { WithStyles, WithTheme, withStyles, Paper, Icon, Link } from "@material-ui/core";
 import { isQualificationEnabled, didQualify } from "../../utils/stats";
 import { RoundResult } from "../../model/RoundResult";
-import { RoundQualification, Round } from "../../model/Round";
+import { Round } from "../../model/Round";
 import { Check, Clear } from "@material-ui/icons";
 import MUIDataTable from "mui-datatables";
 import CodeIcon from '@material-ui/icons/Code';
