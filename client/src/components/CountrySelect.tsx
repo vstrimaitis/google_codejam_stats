@@ -5,7 +5,7 @@ import { countries } from "../utils/countries";
 import Select from "react-select";
 
 const styles = (theme: Theme) => createStyles({
-    ...mainStyles,
+    ...mainStyles(theme),
     countrySelect: {
         fontFamily: theme.typography.fontFamily
     }

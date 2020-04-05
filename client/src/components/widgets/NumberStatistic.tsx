@@ -3,7 +3,7 @@ import { withStyles, WithStyles, Theme, createStyles, Card, CardContent, Typogra
 import { mainStyles } from "../../styles/main";
 
 const styles = (theme: Theme) => createStyles({
-    ...mainStyles,
+    ...mainStyles(theme),
     card: {
         textAlign: "center"
     }

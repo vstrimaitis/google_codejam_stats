@@ -6,7 +6,7 @@ import { TaskCard } from "./TaskCard";
 import { sortByTotalValue } from "../utils/task";
 
 const styles = (theme: Theme) => createStyles({
-    ...mainStyles,
+    ...mainStyles(theme),
     taskContainer: {
         display: "grid",
         gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",

@@ -4,7 +4,7 @@ import { mainStyles } from "../styles/main";
 import { Task, RoundInfo } from "../model/RoundInfo";
 
 const styles = (theme: Theme) => createStyles({
-    ...mainStyles,
+    ...mainStyles(theme),
     capsule: {
         backgroundColor: "#B7B9C7",
         height: 10,

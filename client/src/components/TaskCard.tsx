@@ -6,7 +6,7 @@ import { TaskStatsCapsule } from "./TaskStatsCapsule";
 import LaunchIcon from '@material-ui/icons/Launch';
 
 const styles = (theme: Theme) => createStyles({
-    ...mainStyles,
+    ...mainStyles(theme),
     taskTitle: {
         whiteSpace: "nowrap",
         overflow: "hidden",
