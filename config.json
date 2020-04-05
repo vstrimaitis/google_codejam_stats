@@ -152,9 +152,10 @@
             "year": 2020,
             "displayName": "Qualification Round",
             "qualification": {
-                "type": "NONE"
+                "type": "SCORE",
+                "threshold": 30
             },
-            "areResultsOfficial": true
+            "areResultsOfficial": false
         }
     ]
 }
