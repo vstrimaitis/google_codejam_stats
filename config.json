@@ -154,7 +154,7 @@
             "qualification": {
                 "type": "NONE"
             },
-            "areResultsOfficial": false
+            "areResultsOfficial": true
         }
     ]
 }
