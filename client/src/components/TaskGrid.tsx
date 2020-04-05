@@ -1,21 +1,30 @@
 import React from "react";
-import { withStyles, WithStyles, Grid } from "@material-ui/core";
+import { withStyles, WithStyles, Theme, createStyles } from "@material-ui/core";
 import { mainStyles } from "../styles/main";
 import { Task, RoundInfo } from "../model/RoundInfo";
 import { TaskCard } from "./TaskCard";
 import { sortByTotalValue } from "../utils/task";
 
-interface TaskGridProps extends WithStyles<typeof mainStyles> {
+const styles = (theme: Theme) => createStyles({
+    ...mainStyles,
+    taskContainer: {
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+        gridGap: "15px"
+    }
+});
+
+interface TaskGridProps extends WithStyles<typeof styles> {
     tasks: Task[];
     roundInfo: RoundInfo;
 }
 
-export const TaskGrid = withStyles(mainStyles, { withTheme: true })((props: TaskGridProps) =>
-    <Grid container spacing={2}>
+export const TaskGrid = withStyles(styles, { withTheme: true })((props: TaskGridProps) =>
+    <div className={props.classes.taskContainer}>
         {sortByTotalValue(props.tasks).map(task =>
-            <Grid item xs={12} sm={4} md={3} lg={2} key={task.id}>
+            <div key={task.id}>
                 <TaskCard task={task} roundInfo={props.roundInfo} />
-            </Grid>
+            </div>
         )}
-    </Grid>
+    </div>
 );

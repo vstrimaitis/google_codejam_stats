@@ -67,7 +67,6 @@ const getStatText = (stat: Stat): string => {
 
 const calculateSolvedParts = (task: Task, roundInfo: RoundInfo): Stat[] => {
     const tests = task.tests.filter(t => t.value > 0).reverse();
-    console.log(task.tests, tests);
     let totalValue = tests.map(t => t.value).reduce((a, s) => a + s);
     let testSetCount = tests.length;
     let countedParticipants = 0;
