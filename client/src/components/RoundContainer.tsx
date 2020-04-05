@@ -8,6 +8,9 @@ import { fetchRoundInfo, fetchRoundResults } from "../utils/api";
 import { GlobalResultsGrid } from "./GlobalResultsGrid";
 import { CountryResultsGrid } from "./CountryResultsGrid";
 import { CountrySelect } from "./CountrySelect";
+import { sortByTotalValue } from "../utils/task";
+import { TaskCard } from "./TaskCard";
+import { TaskGrid } from "./TaskGrid";
 
 interface RoundContainerProps extends WithStyles<typeof mainStyles>, WithTheme {
     round?: Round;
@@ -52,7 +55,7 @@ export const RoundContainer = withStyles(mainStyles, { withTheme: true })(
         }
 
         renderStats(roundInfo: RoundInfo, results: RoundResult[]) {
-            if (!this.props.round) {
+            if (!this.props.round || !this.state.roundInfo) {
                 return null;
             }
             const country = this.state.selectedCountry;
@@ -65,7 +68,10 @@ export const RoundContainer = withStyles(mainStyles, { withTheme: true })(
                         <Typography variant="h3" gutterBottom>
                             Problems
                         </Typography>
-                        {this.state.roundInfo?.challenge.tasks.map(task => <p>{task.title}</p>)}
+                        <TaskGrid
+                            tasks={this.state.roundInfo?.challenge.tasks || []}
+                            roundInfo={this.state.roundInfo}
+                        />
                     </Grid>
                     <Grid item xs={12}>
                         <Typography variant="h3" gutterBottom>

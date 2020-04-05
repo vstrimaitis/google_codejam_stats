@@ -5,7 +5,7 @@ interface TaskTest {
     numSolved?: number;
 }
 
-interface Task {
+export interface Task {
     id: string;
     numAttempted: number;
     tests: TaskTest[];

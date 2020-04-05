@@ -36,7 +36,7 @@ export const Sidebar = withStyles(mainStyles, { withTheme: true })(class extends
     );
 
     renderUnofficialRoundLink = (toggleDrawer: boolean, round: Round) => (
-        <Tooltip title="Results are not official yet" placement="right">
+        <Tooltip title="Results are not official yet" placement="right" key={round.id}>
             <ListItem key={round.id} button>
                 <ListItemText
                     disableTypography={true}
