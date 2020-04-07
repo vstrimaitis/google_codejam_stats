@@ -145,7 +145,7 @@ def resolve_qualification_type(info_str):
         "type": "NONE"
     }
 
-def build_round_config_entry(round_id, round_info):
+def build_round_config_entry(round_id, round_info, are_results_final):
     challenge = round_info["challenge"]
     parts = challenge["title"].rsplit(" ", 1)
     return {
@@ -153,10 +153,10 @@ def build_round_config_entry(round_id, round_info):
         "year": int(parts[1]),
         "displayName": parts[0],
         "qualification": resolve_qualification_type(challenge["additionalInfo"]),
-        "areResultsOfficial": False # NOTE: True must be set by hand
+        "areResultsOfficial": are_results_final
     }
 
-def update_config(round_id, round_info):
+def update_config(round_id, round_info, are_results_final):
     with open(CONFIG_FILE_PATH, "r") as f:
         cfg = json.loads(f.read())
     if cfg == None:
@@ -164,7 +164,7 @@ def update_config(round_id, round_info):
     if "rounds" not in cfg:
         cfg["rounds"] = []
     rounds = [r for r in cfg["rounds"] if r["id"] != round_id]
-    rounds.append(build_round_config_entry(round_id, round_info))
+    rounds.append(build_round_config_entry(round_id, round_info, are_results_final))
     cfg["rounds"] = rounds
     with open(CONFIG_FILE_PATH, "w") as f:
         json.dump(cfg, f, indent=4)
@@ -175,8 +175,9 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Download results for a Google Code Jam round")
     parser.add_argument("round_id", help="The ID of the round (can be found at the end of the round URL)")
-    parser.add_argument("-y", action="store_true")
+    parser.add_argument("-y", action="store_true", help="Automatically answer y to y/n prompts")
+    parser.add_argument("-f", action="store_true", help="The results that are being downloaded should be final")
     args = parser.parse_args()
     round_info = download_info(args.round_id, args.y)
-    update_config(args.round_id, round_info)
+    update_config(args.round_id, round_info, args.f)
     download_scores(args.round_id, args.y)
