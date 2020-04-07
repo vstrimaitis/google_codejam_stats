@@ -155,7 +155,7 @@
                 "type": "SCORE",
                 "threshold": 30
             },
-            "areResultsOfficial": false
+            "areResultsOfficial": true
         }
     ]
 }
