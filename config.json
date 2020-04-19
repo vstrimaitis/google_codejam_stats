@@ -166,6 +166,16 @@
                 "threshold": 1500
             },
             "areResultsOfficial": true
+        },
+        {
+            "id": "000000000019fef2",
+            "year": 2020,
+            "displayName": "Round 1B",
+            "qualification": {
+                "type": "RANK",
+                "threshold": 1500
+            },
+            "areResultsOfficial": false
         }
     ]
 }
