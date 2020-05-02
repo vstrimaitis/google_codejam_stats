@@ -176,6 +176,16 @@
                 "threshold": 1500
             },
             "areResultsOfficial": true
+        },
+        {
+            "id": "000000000019fef4",
+            "year": 2020,
+            "displayName": "Round 1C",
+            "qualification": {
+                "type": "RANK",
+                "threshold": 1500
+            },
+            "areResultsOfficial": false
         }
     ]
 }
