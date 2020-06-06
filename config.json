@@ -196,6 +196,16 @@
                 "threshold": 1000
             },
             "areResultsOfficial": true
+        },
+        {
+            "id": "000000000019ff7e",
+            "year": 2020,
+            "displayName": "Round 3",
+            "qualification": {
+                "type": "RANK",
+                "threshold": 25
+            },
+            "areResultsOfficial": false
         }
     ]
 }
