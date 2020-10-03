@@ -6,7 +6,8 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-  } from "react-router-dom";
+} from "react-router-dom";
+import { QueryParamProvider } from 'use-query-params';
 
 
 const theme = createMuiTheme({
@@ -20,12 +21,14 @@ const theme = createMuiTheme({
 const App = () => (
     <MuiThemeProvider theme={theme}>
         <Router>
-        <React.Fragment>
-            <CssBaseline />
-            <Switch>
-                <Route path="/:roundId?" children={<MainView />} />
-            </Switch>    
-        </React.Fragment>
+            <QueryParamProvider ReactRouterRoute={Route}>
+                <React.Fragment>
+                    <CssBaseline />
+                    <Switch>
+                        <Route path="/:roundId?" children={<MainView />} />
+                    </Switch>
+                </React.Fragment>
+            </QueryParamProvider>
         </Router>
     </MuiThemeProvider>
 );
