@@ -20,11 +20,6 @@ interface SidebarProps extends WithStyles<typeof styles>, WithTheme {
     onRoundClicked: (round: Round) => void;
 }
 
-// interface SidebarState {
-//     isDrawerOpen: boolean;
-//     openYear: number | undefined
-// }
-
 const SidebarComponent: FunctionComponent<SidebarProps> = (props) => {
     const { classes } = props;
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
