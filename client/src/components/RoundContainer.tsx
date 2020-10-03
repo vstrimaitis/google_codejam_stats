@@ -1,5 +1,5 @@
 import { CircularProgress, Grid, Typography, WithStyles, withStyles, WithTheme } from "@material-ui/core";
-import React, { Component } from "react";
+import React, { useState, FunctionComponent, useEffect } from "react";
 import { Round } from "../model/Round";
 import { RoundInfo } from "../model/RoundInfo";
 import { RoundResult } from "../model/RoundResult";
@@ -14,94 +14,88 @@ interface RoundContainerProps extends WithStyles<typeof mainStyles>, WithTheme {
     round?: Round;
 }
 
-interface RoundContainerState {
-    isLoading: boolean;
-    roundInfo?: RoundInfo;
-    roundResults: RoundResult[];
-    selectedCountry?: string;
-}
-
-export const RoundContainer = withStyles(mainStyles, { withTheme: true })(
-    class extends Component<RoundContainerProps, RoundContainerState> {
-        state: RoundContainerState = {
-            isLoading: false,
-            roundInfo: undefined,
-            roundResults: [],
-            selectedCountry: undefined
-        }
-
-        async componentWillReceiveProps(nextProps: RoundContainerProps) {
-            if (this.props === nextProps) return;
-            if (!nextProps.round) {
-                this.setState({ isLoading: false, roundInfo: undefined, roundResults: [] });
+const RoundContainerComponent: FunctionComponent<RoundContainerProps> = (props) => {
+    const [isLoading, setIsLoading] = useState(false);
+    const [roundInfo, setRoundInfo] = useState<RoundInfo | undefined>(undefined);
+    const [roundResults, setRoundResults] = useState<RoundResult[]>([]);
+    const [selectedCountry, setSelectedCountry] = useState<string | undefined>(undefined);
+    
+    useEffect(() => {
+        async function setup() {
+            if (!props.round) {
+                setIsLoading(false);
+                setRoundInfo(undefined);
+                setRoundResults([]);
                 return;
             }
-            this.setState({ isLoading: true });
-            const roundId = nextProps.round.id;
+            setIsLoading(true);
+            const roundId = props.round.id;
             const info = await fetchRoundInfo(roundId);
             const results = await fetchRoundResults(roundId);
             console.log(info, results);
-            this.setState({ isLoading: false, roundInfo: info, roundResults: results });
+            setIsLoading(false);
+            setRoundInfo(info);
+            setRoundResults(results);
         }
+        setup();
+    }, [props.round]);
 
-        renderHelp() {
-            return (
-                <Typography paragraph>
-                    Please select a round from the side menu.
-                </Typography>
-            )
+    const renderHelp = () => (
+        <Typography paragraph>
+            Please select a round from the side menu.
+        </Typography>
+    );
+
+    const renderStats = () => {
+        if (!props.round || !roundInfo) {
+            return null;
         }
-
-        renderStats(roundInfo: RoundInfo, results: RoundResult[]) {
-            if (!this.props.round || !this.state.roundInfo) {
-                return null;
-            }
-            const country = this.state.selectedCountry;
-            if (country !== undefined) {
-                results = results.filter(r => r.country.toUpperCase() === country.toUpperCase());
-            }
-            return (
-                <Grid container spacing={2}>
-                    <Grid item xs={12}>
-                        <Typography variant="h3" gutterBottom>
-                            Problems
-                        </Typography>
-                        <TaskGrid
-                            tasks={this.state.roundInfo?.challenge.tasks || []}
-                            roundInfo={this.state.roundInfo}
-                        />
-                    </Grid>
-                    <Grid item xs={12}>
-                        <Typography variant="h3" gutterBottom>
-                            Country stats
-                        </Typography>
-                        <CountrySelect
-                            selectedCountry={this.state.selectedCountry}
-                            onSelectionChanged={country => this.setState({ selectedCountry: country })}
-                        />
-                    </Grid>
-                    <Grid item xs={12}>
-                        {!this.state.selectedCountry
-                            ? <GlobalResultsGrid round={this.props.round} roundInfo={roundInfo} results={results} />
-                            : <CountryResultsGrid round={this.props.round} roundInfo={roundInfo} results={results} />
-                        }
-                    </Grid>
+        const country = selectedCountry;
+        let results = roundResults;
+        if (country !== undefined) {
+            results = results.filter(r => r.country.toUpperCase() === country.toUpperCase());
+        }
+        return (
+            <Grid container spacing={2}>
+                <Grid item xs={12}>
+                    <Typography variant="h3" gutterBottom>
+                        Problems
+                    </Typography>
+                    <TaskGrid
+                        tasks={roundInfo?.challenge.tasks || []}
+                        roundInfo={roundInfo}
+                    />
                 </Grid>
-            )
-        }
-
-        render() {
-            return (
-                <main className={this.props.classes.content}>
-                    <div className={this.props.classes.toolbar} />
-                    {this.state.isLoading
-                        ? <CircularProgress className={this.props.classes.progress} color="secondary" />
-                        : !this.state.roundInfo
-                            ? this.renderHelp()
-                            : this.renderStats(this.state.roundInfo, this.state.roundResults)
+                <Grid item xs={12}>
+                    <Typography variant="h3" gutterBottom>
+                        Country stats
+                    </Typography>
+                    <CountrySelect
+                        selectedCountry={selectedCountry}
+                        onSelectionChanged={setSelectedCountry}
+                    />
+                </Grid>
+                <Grid item xs={12}>
+                    {!selectedCountry
+                        ? <GlobalResultsGrid round={props.round} roundInfo={roundInfo} results={results} />
+                        : <CountryResultsGrid round={props.round} roundInfo={roundInfo} results={results} />
                     }
-                </main>
-            )
-        }
-    }
-);
+                </Grid>
+            </Grid>
+        );
+    };
+
+    return (
+        <main className={props.classes.content}>
+            <div className={props.classes.toolbar} />
+            {isLoading
+                ? <CircularProgress className={props.classes.progress} color="secondary" />
+                : !roundInfo
+                    ? renderHelp()
+                    : renderStats()
+            }
+        </main>
+    )
+}
+
+export const RoundContainer = withStyles(mainStyles, { withTheme: true })(RoundContainerComponent);
