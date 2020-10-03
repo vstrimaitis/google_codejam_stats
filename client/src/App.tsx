@@ -3,7 +3,7 @@ import { MainView } from "./views/MainView";
 import { createMuiTheme, MuiThemeProvider, CssBaseline } from "@material-ui/core";
 import { pink, indigo } from "@material-ui/core/colors";
 import {
-    BrowserRouter as Router,
+    HashRouter as Router,
     Switch,
     Route,
 } from "react-router-dom";
