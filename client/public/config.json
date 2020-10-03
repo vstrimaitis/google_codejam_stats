@@ -206,6 +206,15 @@
                 "threshold": 25
             },
             "areResultsOfficial": true
+        },
+        {
+            "id": "000000000019ff31",
+            "year": 2020,
+            "displayName": "Virtual World Finals",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
         }
     ]
 }
