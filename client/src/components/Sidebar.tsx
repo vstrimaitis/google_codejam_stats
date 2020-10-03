@@ -1,11 +1,12 @@
 import { CircularProgress, Drawer, Hidden, List, ListItem, ListItemText, WithStyles, withStyles, WithTheme, Badge, Typography, Tooltip, Collapse, Theme, createStyles } from "@material-ui/core";
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent, useEffect, useState } from "react";
 import { Round } from "../model/Round";
 import { mainStyles } from "../styles/main";
 import { Header } from "./Header";
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import "typescript-array-extensions";
+import { Link } from "react-router-dom";
 
 const styles = (theme: Theme) => createStyles({
     ...mainStyles(theme),
@@ -17,13 +18,15 @@ const styles = (theme: Theme) => createStyles({
 interface SidebarProps extends WithStyles<typeof styles>, WithTheme {
     isLoading: boolean;
     rounds: Round[];
-    onRoundClicked: (round: Round) => void;
+    openYear?: number;
 }
 
 const SidebarComponent: FunctionComponent<SidebarProps> = (props) => {
     const { classes } = props;
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-    const [openYear, setOpenYear] = useState<number | undefined>(undefined);
+    const [openYear, setOpenYear] = useState<number | undefined>(props.openYear);
+
+    useEffect(() => setOpenYear(props.openYear), [props.openYear]);
 
     const handleYearClick = (clickedYear: number) =>
         setOpenYear(openYear === clickedYear ? undefined : clickedYear);
@@ -31,12 +34,11 @@ const SidebarComponent: FunctionComponent<SidebarProps> = (props) => {
     const handleDrawerToggle = () => setIsDrawerOpen(!isDrawerOpen);
 
     const renderOfficialRoundLink = (toggleDrawer: boolean, round: Round) => (
-        <ListItem key={round.id} button className={props.classes.nested}>
+        <ListItem key={round.id} button className={props.classes.nested} component={Link} to={`/${round.id}`}>
             <ListItemText
                 disableTypography={true}
                 onClick={() => {
                     if (toggleDrawer) handleDrawerToggle();
-                    props.onRoundClicked(round);
                 }}
             >
                 <Typography>
@@ -48,12 +50,11 @@ const SidebarComponent: FunctionComponent<SidebarProps> = (props) => {
 
     const renderUnofficialRoundLink = (toggleDrawer: boolean, round: Round) => (
         <Tooltip title="Results are not official yet" placement="right" key={round.id}>
-            <ListItem key={round.id} button className={props.classes.nested}>
+            <ListItem key={round.id} button className={props.classes.nested} component={Link} to={`/${round.id}`}>
                 <ListItemText
                     disableTypography={true}
                     onClick={() => {
                         if (toggleDrawer) handleDrawerToggle();
-                        props.onRoundClicked(round);
                     }}
                 >
                     <Badge variant="dot" color="secondary">
@@ -75,7 +76,7 @@ const SidebarComponent: FunctionComponent<SidebarProps> = (props) => {
                 <List>
                     {Array.from(rounds.groupBy(x => x.year).entries())
                         .map(x =>
-                            <>
+                            <div key={x[0]}>
                                 <ListItem button onClick={() => handleYearClick(x[0])}>
                                     <ListItemText primary={x[0]} />
                                     {openYear === x[0] ? <ExpandLess /> : <ExpandMore />}
@@ -92,7 +93,7 @@ const SidebarComponent: FunctionComponent<SidebarProps> = (props) => {
                                         }
                                     </List>
                                 </Collapse>
-                            </>
+                            </div>
                         )
                     }
                 </List>

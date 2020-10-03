@@ -9,6 +9,8 @@ import { GlobalResultsGrid } from "./GlobalResultsGrid";
 import { CountryResultsGrid } from "./CountryResultsGrid";
 import { CountrySelect } from "./CountrySelect";
 import { TaskGrid } from "./TaskGrid";
+import { StringParam, useQueryParam } from "use-query-params";
+
 
 interface RoundContainerProps extends WithStyles<typeof mainStyles>, WithTheme {
     round?: Round;
@@ -18,7 +20,7 @@ const RoundContainerComponent: FunctionComponent<RoundContainerProps> = (props) 
     const [isLoading, setIsLoading] = useState(false);
     const [roundInfo, setRoundInfo] = useState<RoundInfo | undefined>(undefined);
     const [roundResults, setRoundResults] = useState<RoundResult[]>([]);
-    const [selectedCountry, setSelectedCountry] = useState<string | undefined>(undefined);
+    const [selectedCountry, setSelectedCountry] = useQueryParam("country", StringParam);
     
     useEffect(() => {
         async function setup() {
@@ -52,7 +54,7 @@ const RoundContainerComponent: FunctionComponent<RoundContainerProps> = (props) 
         }
         const country = selectedCountry;
         let results = roundResults;
-        if (country !== undefined) {
+        if (country) {
             results = results.filter(r => r.country.toUpperCase() === country.toUpperCase());
         }
         return (
@@ -71,7 +73,7 @@ const RoundContainerComponent: FunctionComponent<RoundContainerProps> = (props) 
                         Country stats
                     </Typography>
                     <CountrySelect
-                        selectedCountry={selectedCountry}
+                        selectedCountry={selectedCountry || undefined}
                         onSelectionChanged={setSelectedCountry}
                     />
                 </Grid>
