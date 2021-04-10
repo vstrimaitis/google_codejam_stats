@@ -297,6 +297,600 @@
                 "type": "NONE"
             },
             "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000201bee",
+            "year": 2016,
+            "displayName": "Qualification Round",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000201bf2",
+            "year": 2016,
+            "displayName": "Round 1A",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000201b6c",
+            "year": 2016,
+            "displayName": "Round 1B",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000201bef",
+            "year": 2016,
+            "displayName": "Round 1C",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000201c91",
+            "year": 2016,
+            "displayName": "Round 2",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000201bf3",
+            "year": 2016,
+            "displayName": "Round 3",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000201b72",
+            "year": 2016,
+            "displayName": "World Finals",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000433515",
+            "year": 2015,
+            "displayName": "Qualification Round",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "00000000004336e9",
+            "year": 2015,
+            "displayName": "Round 1A",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000433551",
+            "year": 2015,
+            "displayName": "Round 1B",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000433b4d",
+            "year": 2015,
+            "displayName": "Round 1C",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000433651",
+            "year": 2015,
+            "displayName": "Round 2",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000433c84",
+            "year": 2015,
+            "displayName": "Round 3",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000433831",
+            "year": 2015,
+            "displayName": "World Finals",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432add",
+            "year": 2014,
+            "displayName": "Qualification Round",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000433162",
+            "year": 2014,
+            "displayName": "Round 1A",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432a90",
+            "year": 2014,
+            "displayName": "Round 1B",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432cd8",
+            "year": 2014,
+            "displayName": "Round 1C",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432fed",
+            "year": 2014,
+            "displayName": "Round 2",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "000000000043371f",
+            "year": 2014,
+            "displayName": "Round 3",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "000000000043363b",
+            "year": 2014,
+            "displayName": "World Finals",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432dfc",
+            "year": 2013,
+            "displayName": "Qualification Round",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432b32",
+            "year": 2013,
+            "displayName": "Round 1A",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432be7",
+            "year": 2013,
+            "displayName": "Round 1B",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432b86",
+            "year": 2013,
+            "displayName": "Round 1C",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432cd3",
+            "year": 2013,
+            "displayName": "Round 2",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "000000000043319e",
+            "year": 2013,
+            "displayName": "Round 3",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "00000000004331a0",
+            "year": 2013,
+            "displayName": "World Finals",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432b33",
+            "year": 2012,
+            "displayName": "Qualification Round",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "000000000043308c",
+            "year": 2012,
+            "displayName": "Round 1A",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432f3e",
+            "year": 2012,
+            "displayName": "Round 1B",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "000000000043308d",
+            "year": 2012,
+            "displayName": "Round 1C",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432fe9",
+            "year": 2012,
+            "displayName": "Round 2",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432f40",
+            "year": 2012,
+            "displayName": "Round 3",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "000000000043319f",
+            "year": 2012,
+            "displayName": "World Finals",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432f3a",
+            "year": 2011,
+            "displayName": "Qualification Round",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000433198",
+            "year": 2011,
+            "displayName": "Round 1A",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432be3",
+            "year": 2011,
+            "displayName": "Round 1B",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000433199",
+            "year": 2011,
+            "displayName": "Round 1C",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432f3b",
+            "year": 2011,
+            "displayName": "Round 2",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000433333",
+            "year": 2011,
+            "displayName": "Round 3",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "000000000043319a",
+            "year": 2011,
+            "displayName": "World Finals",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432b7e",
+            "year": 2010,
+            "displayName": "Qualification Round",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000433085",
+            "year": 2010,
+            "displayName": "Round 1A",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432ad7",
+            "year": 2010,
+            "displayName": "Round 1B",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432ccd",
+            "year": 2010,
+            "displayName": "Round 1C",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432b7f",
+            "year": 2010,
+            "displayName": "Round 2",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "000000000043315b",
+            "year": 2010,
+            "displayName": "Round 3",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "000000000043324a",
+            "year": 2010,
+            "displayName": "World Finals",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432cc4",
+            "year": 2009,
+            "displayName": "Qualification Round",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432b26",
+            "year": 2009,
+            "displayName": "Round 1A",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432b7a",
+            "year": 2009,
+            "displayName": "Round 1B",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000433247",
+            "year": 2009,
+            "displayName": "Round 1C",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432cc7",
+            "year": 2009,
+            "displayName": "Round 2",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "00000000004329f8",
+            "year": 2009,
+            "displayName": "Round 3",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432ad5",
+            "year": 2009,
+            "displayName": "World Finals",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432b79",
+            "year": 2008,
+            "displayName": "Qualification Round",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "00000000004330f6",
+            "year": 2008,
+            "displayName": "Round 1A",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432bd2",
+            "year": 2008,
+            "displayName": "Round 1B",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "000000000043314d",
+            "year": 2008,
+            "displayName": "Round 1C",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000432cc0",
+            "year": 2008,
+            "displayName": "Round 2",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "00000000004329f5",
+            "year": 2008,
+            "displayName": "Round 3",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000436b54",
+            "year": 2008,
+            "displayName": "APAC Semifinal",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000436baa",
+            "year": 2008,
+            "displayName": "AMER Semifinal",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000436d8a",
+            "year": 2008,
+            "displayName": "EMEA Semifinal",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "00000000004329f6",
+            "year": 2008,
+            "displayName": "World Finals",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
         }
     ]
 }
