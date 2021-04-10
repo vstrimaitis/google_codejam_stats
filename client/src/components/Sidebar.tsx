@@ -75,6 +75,8 @@ const SidebarComponent: FunctionComponent<SidebarProps> = (props) => {
                 :
                 <List>
                     {Array.from(rounds.groupBy(x => x.year).entries())
+                        .slice()
+                        .sort((a, b) => a[0]-b[0])
                         .map(x =>
                             <div key={x[0]}>
                                 <ListItem button onClick={() => handleYearClick(x[0])}>
