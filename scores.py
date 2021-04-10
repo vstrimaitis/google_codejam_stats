@@ -125,6 +125,8 @@ def print_stats(round_id, country):
             print(f"{str(r['rank']).center(RANK_W)}|{str(r['displayname']).center(USERNAME_W)}|{str(r['score1']).center(SCORE_W)}")
 
 def resolve_qualification_type(info_str):
+    if not info_str:
+        return {"type": "NONE"}
     rank_pattern = re.compile(r".*top (\d+) .*")
     score_pattern = re.compile(r".* (\d+) points.*")
     if rank_pattern.match(info_str):
@@ -152,7 +154,7 @@ def build_round_config_entry(round_id, round_info, are_results_final):
         "id": round_id,
         "year": int(parts[1]),
         "displayName": parts[0],
-        "qualification": resolve_qualification_type(challenge["additionalInfo"]),
+        "qualification": resolve_qualification_type(challenge.get("additionalInfo", None)),
         "areResultsOfficial": are_results_final
     }
 

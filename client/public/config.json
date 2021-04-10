@@ -234,6 +234,69 @@
                 "type": "NONE"
             },
             "areResultsOfficial": false
+        },
+        {
+            "id": "00000000002017f7",
+            "year": 2017,
+            "displayName": "Qualification Round",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000201843",
+            "year": 2017,
+            "displayName": "Round 1A",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "000000000020187f",
+            "year": 2017,
+            "displayName": "Round 1B",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000201842",
+            "year": 2017,
+            "displayName": "Round 1C",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000201900",
+            "year": 2017,
+            "displayName": "Round 2",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000201902",
+            "year": 2017,
+            "displayName": "Round 3",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000201909",
+            "year": 2017,
+            "displayName": "World Finals",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
         }
     ]
 }
