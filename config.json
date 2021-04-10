@@ -215,6 +215,25 @@
                 "type": "NONE"
             },
             "areResultsOfficial": true
+        },
+        {
+            "id": "000000000043580a",
+            "year": 2021,
+            "displayName": "Qualification Round",
+            "qualification": {
+                "type": "SCORE",
+                "threshold": 30
+            },
+            "areResultsOfficial": true
+        },
+        {
+            "id": "000000000043585d",
+            "year": 2021,
+            "displayName": "Round 1A",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": false
         }
     ]
 }
