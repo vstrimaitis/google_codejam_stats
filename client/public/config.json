@@ -902,6 +902,16 @@
                 "threshold": 1500
             },
             "areResultsOfficial": true
+        },
+        {
+            "id": "00000000004362d7",
+            "year": 2021,
+            "displayName": "Round 1C",
+            "qualification": {
+                "type": "RANK",
+                "threshold": 1500
+            },
+            "areResultsOfficial": true
         }
     ]
 }
