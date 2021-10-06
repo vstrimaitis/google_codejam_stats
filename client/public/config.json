@@ -898,7 +898,8 @@
             "year": 2021,
             "displayName": "Round 1B",
             "qualification": {
-                "type": "NONE"
+                "type": "RANK",
+                "threshold": 1500
             },
             "areResultsOfficial": true
         }
