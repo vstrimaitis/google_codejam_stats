@@ -912,6 +912,16 @@
                 "threshold": 1500
             },
             "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000435915",
+            "year": 2021,
+            "displayName": "Round 2",
+            "qualification": {
+                "type": "RANK",
+                "threshold": 1000
+            },
+            "areResultsOfficial": true
         }
     ]
 }
