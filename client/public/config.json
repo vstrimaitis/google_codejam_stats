@@ -932,6 +932,15 @@
                 "threshold": 25
             },
             "areResultsOfficial": true
+        },
+        {
+            "id": "0000000000436329",
+            "year": 2021,
+            "displayName": "World Finals",
+            "qualification": {
+                "type": "NONE"
+            },
+            "areResultsOfficial": true
         }
     ]
 }
