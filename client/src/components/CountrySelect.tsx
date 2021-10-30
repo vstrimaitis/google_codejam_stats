@@ -25,7 +25,7 @@ export const CountrySelect = withStyles(styles, { withTheme: true })(
             className={classes.countrySelect}
             defaultValue={{ value: getValue(selectedCountry), label: getValue(selectedCountry) }}
             isSearchable
-            options={["Worldwide"].concat(countries).map(c => ({ value: c, label: c }))}
+            options={["Worldwide"].concat(countries.map(c => c.readableName)).map(c => ({ value: c, label: c }))}
             onChange={(e: any) => onSelectionChanged(e.label === "Worldwide" ? undefined : e.label)}
         />
     )
