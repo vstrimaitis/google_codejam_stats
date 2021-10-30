@@ -1,1 +1,7 @@
-{}
+{
+    "[typescriptreact]": {
+        "editor.formatOnSave": false,
+        "eslint.autoFixOnSave": false,
+        "tslint.autoFixOnSave": false
+    },
+}
