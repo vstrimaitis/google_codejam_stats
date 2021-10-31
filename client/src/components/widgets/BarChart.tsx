@@ -1,4 +1,4 @@
-import { WithStyles, withStyles, WithTheme } from "@material-ui/core";
+import { Card, CardContent, WithStyles, withStyles, WithTheme } from "@material-ui/core";
 import React from "react";
 import { HorizontalBar, Bar } from "react-chartjs-2";
 import { mainStyles } from "../../styles/main";
@@ -86,7 +86,12 @@ const renderVertical = ({ data, title, label, theme }: BarChartProps) => (
 
 export const BarChart = withStyles(mainStyles, { withTheme: true })(
     (props: BarChartProps) => (
-        props.type === BarChartType.HORIZONTAL
+      <Card>
+        <CardContent>
+          {props.type === BarChartType.HORIZONTAL
             ? renderHorizontal(props)
-            : renderVertical(props)
-    ));
+            : renderVertical(props)}
+        </CardContent>
+      </Card>
+    )
+);
