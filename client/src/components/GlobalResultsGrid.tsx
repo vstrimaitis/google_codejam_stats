@@ -1,5 +1,5 @@
 import React from "react";
-import { withStyles, WithStyles, WithTheme, Grid } from "@material-ui/core";
+import { withStyles, WithStyles, WithTheme, Grid, Typography } from "@material-ui/core";
 import { mainStyles } from "../styles/main";
 import { RoundResult } from "../model/RoundResult";
 import { Round } from "../model/Round";
@@ -8,6 +8,7 @@ import { getMaxScore, getNumberOfParticipantsByCountry, getAverageScoreByCountry
 import { NumberStatistic } from "./widgets/NumberStatistic";
 import { ResultsTable } from "./widgets/ResultsTable";
 import { BarChartType, BarChart } from "./widgets/BarChart";
+import { WorldMap } from "./widgets/WorldMap";
 
 interface GlobalResultsGridProps extends WithStyles<typeof mainStyles>, WithTheme {
     results: RoundResult[];
@@ -47,6 +48,14 @@ export const GlobalResultsGrid = withStyles(mainStyles, { withTheme: true })(
                     <NumberStatistic
                         number={getParticipantsWithAtLeastOneSolved(results).length}
                         label="people solved at least one test set"
+                    />
+                </Grid>
+                <Grid item xs={12} sm={12} md={12} style={{ textAlign: "center" }}>
+                    <Typography variant="h5" gutterBottom>
+                        Participation by country
+                    </Typography>
+                    <WorldMap
+                        data={getNumberOfParticipantsByCountry(results)}
                     />
                 </Grid>
                 <Grid item xs={12} md={6}>
