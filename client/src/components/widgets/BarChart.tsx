@@ -38,11 +38,11 @@ const renderHorizontal = ({ data, title, label, theme }: BarChartProps) => (
             datasets: [
                 {
                     label,
-                    backgroundColor: theme.palette.primary.light,
+                    backgroundColor: theme.palette.primary.dark,
                     borderColor: theme.palette.primary.dark,
                     borderWidth: 1,
-                    hoverBackgroundColor: theme.palette.secondary.light,
-                    hoverBorderColor: theme.palette.secondary.dark,
+                    hoverBackgroundColor: theme.palette.primary.light,
+                    hoverBorderColor: theme.palette.primary.dark,
                     data: Array.from(data.values())
                 }
             ]
@@ -75,8 +75,8 @@ const renderVertical = ({ data, title, label, theme }: BarChartProps) => (
             datasets: [
                 {
                     label: label,
-                    backgroundColor: theme.palette.primary.light,
-                    hoverBackgroundColor: theme.palette.secondary.light,
+                    backgroundColor: theme.palette.primary.dark,
+                    hoverBackgroundColor: theme.palette.primary.light,
                     data: Array.from(data.values())
                 }
             ]
