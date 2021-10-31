@@ -1,5 +1,5 @@
 import React from "react";
-import { withStyles, WithStyles, WithTheme, Grid, Typography } from "@material-ui/core";
+import { withStyles, WithStyles, WithTheme, Grid } from "@material-ui/core";
 import { mainStyles } from "../styles/main";
 import { RoundResult } from "../model/RoundResult";
 import { Round } from "../model/Round";
@@ -51,11 +51,9 @@ export const GlobalResultsGrid = withStyles(mainStyles, { withTheme: true })(
                     />
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} style={{ textAlign: "center" }}>
-                    <Typography variant="h5" gutterBottom>
-                        Participation by country
-                    </Typography>
                     <WorldMap
                         data={getNumberOfParticipantsByCountry(results)}
+                        title="Participation by country"
                     />
                 </Grid>
                 <Grid item xs={12} md={6}>
