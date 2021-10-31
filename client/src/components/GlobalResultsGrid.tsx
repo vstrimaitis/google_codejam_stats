@@ -55,7 +55,7 @@ export const GlobalResultsGrid = withStyles(mainStyles, { withTheme: true })(
                         Participation by country
                     </Typography>
                     <WorldMap
-                        groupsByParticipants={getNumberOfParticipantsByCountry(results)}
+                        data={getNumberOfParticipantsByCountry(results)}
                     />
                 </Grid>
                 <Grid item xs={12} md={6}>
